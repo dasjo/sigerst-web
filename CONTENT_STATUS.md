@@ -4,8 +4,8 @@ Confirm each page before it is marked **approved** and pushed.
 
 | # | Page | File | Status | Notes |
 |---|------|------|--------|-------|
-| 1 | **Home** | `index.html` | **draft** | Awaiting your confirmation |
-| 2 | Das Haus | `das-haus.md` | pending | |
+| 1 | **Home** | `index.html` | **approved** | Du-Form (ihr) |
+| 2 | Das Haus | `das-haus.md` | **draft** | Awaiting your confirmation |
 | 3 | Anreise | `anreise.md` | pending | |
 | 4 | Aktivitäten | `aktivitaeten.md` | pending | |
 | 5 | Abreise | `abreise.md` | pending | |
