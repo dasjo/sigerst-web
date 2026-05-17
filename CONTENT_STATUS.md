@@ -9,8 +9,8 @@ Confirm each page before it is marked **approved** and pushed.
 | 3 | Anreise | `anreise.md` | **approved** | |
 | 4 | Aktivitäten | `aktivitaeten.md` | **approved** | |
 | 5 | Abreise | `abreise.md` | **approved** | |
-| 6 | Kontakt | `kontakt.html` | **draft** | Öffentlich → Berg & Bett; Gäste `?gast=sigerst-guest` + Formular |
-| 7 | Skifahren | `skifahren.md` | pending | |
+| 6 | Kontakt | `kontakt.html` | **approved** | Berg & Bett öffentlich; Gäste `?gast=sigerst-guest` |
+| 7 | Skifahren | `skifahren.md` | **draft** | Awaiting confirmation |
 | 8 | Winteraktivitäten | `winteraktivitaeten.md` | pending | |
 | 9 | Wandern & Ausflüge | `wandern-ausflugsziele.md` | pending | |
 | 10 | Mountainbike | `mountainbike.md` | pending | |
