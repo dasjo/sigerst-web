@@ -7,9 +7,9 @@ Confirm each page before it is marked **approved** and pushed.
 | 1 | **Home** | `index.html` | **approved** | Du-Form (ihr) |
 | 2 | Das Haus | `das-haus.md` | **approved** | |
 | 3 | Anreise | `anreise.md` | **approved** | |
-| 4 | Aktivitäten | `aktivitaeten.md` | **draft** | Übersicht; awaiting confirmation |
-| 5 | Abreise | `abreise.md` | **draft** | ihr-Form; awaiting confirmation |
-| 6 | Kontakt | `kontakt.html` | pending | |
+| 4 | Aktivitäten | `aktivitaeten.md` | **approved** | |
+| 5 | Abreise | `abreise.md` | **approved** | |
+| 6 | Kontakt | `kontakt.html` | **draft** | Awaiting confirmation |
 | 7 | Skifahren | `skifahren.md` | pending | |
 | 8 | Winteraktivitäten | `winteraktivitaeten.md` | pending | |
 | 9 | Wandern & Ausflüge | `wandern-ausflugsziele.md` | pending | |
