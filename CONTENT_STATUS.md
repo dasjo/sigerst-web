@@ -6,9 +6,9 @@ Confirm each page before it is marked **approved** and pushed.
 |---|------|------|--------|-------|
 | 1 | **Home** | `index.html` | **approved** | Du-Form (ihr) |
 | 2 | Das Haus | `das-haus.md` | **approved** | |
-| 3 | Anreise | `anreise.md` | **draft** | Vereinfacht; Wegkarte; awaiting confirmation |
-| 4 | Aktivitäten | `aktivitaeten.md` | pending | |
-| 5 | Abreise | `abreise.md` | pending | |
+| 3 | Anreise | `anreise.md` | **approved** | |
+| 4 | Aktivitäten | `aktivitaeten.md` | **draft** | Übersicht; awaiting confirmation |
+| 5 | Abreise | `abreise.md` | **draft** | ihr-Form; awaiting confirmation |
 | 6 | Kontakt | `kontakt.html` | pending | |
 | 7 | Skifahren | `skifahren.md` | pending | |
 | 8 | Winteraktivitäten | `winteraktivitaeten.md` | pending | |
