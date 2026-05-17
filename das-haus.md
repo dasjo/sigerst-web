@@ -11,7 +11,7 @@ Das **Ferienhaus Sigerst** ist ein traditionelles, liebevoll saniertes Toggenbur
 ## Kapazität & Räume
 
 - **Gäste:** bis zu 8 Personen
-- **Zimmer:** 4–5 Zimmer, 4 Schlafzimmer
+- **Schlafzimmer:** 4
 - **Betten:** 4× Doppelbett, 3× Einzelbett, 1× Etagenbett
 - **Wohnfläche:** ca. 180 m²
 - **Grundstück:** ca. 900 m²
@@ -19,7 +19,7 @@ Das **Ferienhaus Sigerst** ist ein traditionelles, liebevoll saniertes Toggenbur
 ## Ausstattung
 
 - **Küche:** voll ausgestattet (Glaskeramikherd, Kühlschrank)
-- **Wohnbereich:** gemütlich mit TV, Sofa, Esstisch
+- **Wohnzimmer/Stube:** mit Schwedenofen und Sofa
 - **Badezimmer:** Dusche, WC, Lavabo; zusätzlich separates WC mit Lavabo
 - **Terrasse / Balkon**
 
@@ -29,7 +29,6 @@ Das **Ferienhaus Sigerst** ist ein traditionelles, liebevoll saniertes Toggenbur
 - **Feuerstelle**
 - **Natürlicher Bach** auf dem Grundstück
 - **Trampolin, Schaukel**
-- **Tischtennistisch**
 - Viele ruhige Plätze im Garten
 
 ## Heizung & Nachhaltigkeit
@@ -41,7 +40,7 @@ Das **Ferienhaus Sigerst** ist ein traditionelles, liebevoll saniertes Toggenbur
 
 - **Keine direkte Zufahrt** zum Haus – Parkplatz liegt ca. 300 m oberhalb
 - Zugang nur zu Fuß (ca. 5–10 Min bergab)
-- Weg ganzjährig begehbar; im Winter feste Schuhe empfohlen
+- Im Winter feste Schuhe empfohlen
 - Nicht barrierefrei
 
 ---
