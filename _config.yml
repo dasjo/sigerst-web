@@ -7,3 +7,10 @@ url: ""
 markdown: kramdown
 highlighter: rouge
 permalink: pretty
+
+# Gäste-Link: /kontakt/?gast=<token> (siehe README)
+guest_link_param: gast
+guest_link_token: sigerst-guest
+
+# Öffentliche Buchung
+berg_und_bett_booking_url: "https://booking.bergundbett.ch/vermietung/ferienhaus-wildhaus-sigerst-441356.html"

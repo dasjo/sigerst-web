@@ -206,3 +206,31 @@ a:hover { color: var(--color-link-hover); }
   aspect-ratio: 4 / 3;
   border: 0;
 }
+
+/* Öffentlich vs. Gäste (JS setzt html.guest-mode) */
+.guest-only {
+  display: none;
+}
+html.guest-mode .guest-only {
+  display: block;
+}
+html.guest-mode .public-only {
+  display: none;
+}
+
+.cta-block {
+  margin: 1.5rem 0;
+}
+.btn-primary {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--color-link);
+  text-decoration: none;
+  border-radius: 6px;
+}
+.btn-primary:hover {
+  background: var(--color-link-hover);
+  color: #fff;
+}
