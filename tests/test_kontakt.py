@@ -23,7 +23,7 @@ def test_kontakt_public_berg_und_bett():
 def test_kontakt_guest_form():
     html = KONTAKT.read_text(encoding="utf-8")
     assert "guest-only" in html
-    assert "formspree.io" in html
+    assert "https://formspree.io/f/xdajoobd" in html
     assert 'class="contact-form"' in html
 
 
