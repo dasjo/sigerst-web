@@ -1,0 +1,190 @@
+/* Ferienhaus Sigerst – minimal, readable */
+:root {
+  --color-text: #1a1a1a;
+  --color-muted: #555;
+  --color-link: #2d5a27;
+  --color-link-hover: #1e3d1a;
+  --color-bg: #faf9f7;
+  --color-card: #fff;
+  --font-sans: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  --max-width: 720px;
+  --spacing: 1.5rem;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+.wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing);
+}
+
+/* Header */
+.site-header {
+  background: var(--color-card);
+  border-bottom: 1px solid #eee;
+  padding: var(--spacing) 0;
+}
+.site-header .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing);
+}
+.site-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text);
+  text-decoration: none;
+}
+.site-title:hover { color: var(--color-link); }
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.site-nav a {
+  color: var(--color-muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+.site-nav a:hover { color: var(--color-link); }
+
+/* Main */
+.page-content {
+  padding: calc(var(--spacing) * 2) 0;
+}
+.page-content h1 { font-size: 1.75rem; margin-top: 0; }
+.page-content h2 { font-size: 1.35rem; margin-top: 2rem; }
+.page-content h3 { font-size: 1.15rem; margin-top: 1.5rem; }
+.page-content h4 { font-size: 1.05rem; margin-top: 1rem; }
+.page-content pre,
+.page-content code {
+  background: #f0f0f0;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+.page-content pre {
+  padding: 1rem;
+  overflow-x: auto;
+}
+.page-content pre code { padding: 0; background: none; }
+.page-content table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+.page-content th,
+.page-content td {
+  border: 1px solid #ddd;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+}
+.page-content th { background: #f5f5f5; }
+.page-content hr { border: none; border-top: 1px solid #eee; margin: 2rem 0; }
+.page-content ul, .page-content ol { padding-left: 1.5rem; }
+.page-content blockquote {
+  border-left: 4px solid var(--color-link);
+  margin: 1.5rem 0;
+  padding-left: 1rem;
+  color: var(--color-muted);
+}
+
+a { color: var(--color-link); }
+a:hover { color: var(--color-link-hover); }
+
+/* Home blocks */
+.home-intro {
+  font-size: 1.1rem;
+  margin-bottom: 2.5rem;
+}
+.home-blocks {
+  display: grid;
+  gap: var(--spacing);
+}
+.home-block {
+  background: var(--color-card);
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: box-shadow 0.2s;
+}
+.home-block:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.home-block h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+}
+.home-block p { margin: 0; color: var(--color-muted); font-size: 0.95rem; }
+
+/* Contact form */
+.form-group { margin-bottom: 1.25rem; }
+.form-group label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.35rem;
+}
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.5rem 0.75rem;
+  font: inherit;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.form-group textarea { min-height: 120px; resize: vertical; }
+.form-actions { margin-top: 1.5rem; }
+.form-actions button {
+  padding: 0.6rem 1.25rem;
+  font: inherit;
+  font-weight: 500;
+  color: #fff;
+  background: var(--color-link);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.form-actions button:hover { background: var(--color-link-hover); }
+
+/* Footer */
+.site-footer {
+  margin-top: 3rem;
+  padding: var(--spacing) 0;
+  border-top: 1px solid #eee;
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+.site-footer a { color: var(--color-muted); }
+.site-footer a:hover { color: var(--color-link); }
+
+/* Aktivitäten link list */
+.aktivitaeten-list { list-style: none; padding-left: 0; }
+.aktivitaeten-list li {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: var(--color-card);
+  border: 1px solid #eee;
+  border-radius: 8px;
+}
+.aktivitaeten-list a {
+  font-weight: 500;
+  text-decoration: none;
+}
+.aktivitaeten-list a:hover { text-decoration: underline; }
+.aktivitaeten-list p { margin: 0.35rem 0 0; font-size: 0.95rem; color: var(--color-muted); }

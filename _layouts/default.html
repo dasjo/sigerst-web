@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
+      <nav class="site-nav">
+        <a href="{{ site.baseurl }}/">Home</a>
+        <a href="{{ site.baseurl }}/das-haus/">Das Haus</a>
+        <a href="{{ site.baseurl }}/anreise/">Anreise</a>
+        <a href="{{ site.baseurl }}/aktivitaeten/">Aktivitäten</a>
+        <a href="{{ site.baseurl }}/abreise/">Abreise</a>
+        <a href="{{ site.baseurl }}/kontakt/">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-content">
+    <div class="wrap">
+      {{ content }}
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Ferienhaus Sigerst · Wildhaus, Toggenburg · <a href="{{ site.baseurl }}/kontakt/">Kontakt</a></p>
+    </div>
+  </footer>
+</body>
+</html>

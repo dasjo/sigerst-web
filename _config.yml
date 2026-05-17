@@ -1,0 +1,9 @@
+# Ferienhaus Sigerst – GitHub Pages (repo root)
+title: "Ferienhaus Sigerst"
+description: "Ferienhaus Sigerst in Wildhaus, Toggenburg"
+baseurl: "/sigerst-web"
+url: ""
+
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
