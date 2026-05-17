@@ -6,7 +6,7 @@ Confirm each page before it is marked **approved** and pushed.
 |---|------|------|--------|-------|
 | 1 | **Home** | `index.html` | **approved** | Du-Form (ihr) |
 | 2 | Das Haus | `das-haus.md` | **approved** | |
-| 3 | Anreise | `anreise.md` | **draft** | Du-Form (ihr); awaiting confirmation |
+| 3 | Anreise | `anreise.md` | **draft** | Vereinfacht; Wegkarte; awaiting confirmation |
 | 4 | Aktivitäten | `aktivitaeten.md` | pending | |
 | 5 | Abreise | `abreise.md` | pending | |
 | 6 | Kontakt | `kontakt.html` | pending | |
