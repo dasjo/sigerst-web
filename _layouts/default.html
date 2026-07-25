@@ -16,6 +16,7 @@
         <a href="{{ site.baseurl }}/das-haus/">Das Haus</a>
         <a href="{{ site.baseurl }}/anreise/">Anreise</a>
         <a href="{{ site.baseurl }}/aktivitaeten/">Aktivitäten</a>
+        <a href="{{ site.baseurl }}/karte/">Karte</a>
         <a href="{{ site.baseurl }}/abreise/">Abreise</a>
         <a href="{{ site.baseurl }}/kontakt/">Kontakt</a>
       </nav>
@@ -23,7 +24,7 @@
   </header>
 
   <main class="page-content">
-    <div class="wrap">
+    <div class="wrap{% if page.wide %} wrap--wide{% endif %}">
       {{ content }}
     </div>
   </main>

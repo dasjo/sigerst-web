@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Ferienhaus Sigerst (BRouter/OSM)" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata><name>Rundweg Unterwasser – Thurfälle – Laui – Gräppelensee</name>
+    <desc>Automatisch generierter Verlauf entlang des OSM-Wanderwegnetzes (BRouter, Profil hiking-mountain). Grobe Auflösung – vor Nutzung im Gelände prüfen.</desc>
+  </metadata>
+  <wpt lat="47.19952" lon="9.30796"><name>Start: Unterwasser Dorf</name></wpt>
+  <wpt lat="47.20229" lon="9.31189"><name>Thurwasserfälle</name></wpt>
+  <wpt lat="47.21727" lon="9.31733"><name>Parkplatz Laui</name></wpt>
+  <wpt lat="47.21143" lon="9.28748"><name>Gräppelensee</name></wpt>
+  <trk><name>Rundweg Unterwasser – Thurfälle – Laui – Gräppelensee</name><trkseg>
+    <trkpt lat="47.199494" lon="9.308276"><ele>927</ele></trkpt>
+    <trkpt lat="47.200947" lon="9.308964"><ele>945</ele></trkpt>
+    <trkpt lat="47.20093" lon="9.30898"><ele>944</ele></trkpt>
+    <trkpt lat="47.200649" lon="9.309263"><ele>932</ele></trkpt>
+    <trkpt lat="47.199987" lon="9.309691"><ele>918</ele></trkpt>
+    <trkpt lat="47.199479" lon="9.310412"><ele>907</ele></trkpt>
+    <trkpt lat="47.199384" lon="9.310484"><ele>907</ele></trkpt>
+    <trkpt lat="47.199368" lon="9.310495"><ele>907</ele></trkpt>
+    <trkpt lat="47.20118" lon="9.312007"><ele>919</ele></trkpt>
+    <trkpt lat="47.20181" lon="9.311717"><ele>921</ele></trkpt>
+    <trkpt lat="47.201811" lon="9.31174"><ele>921</ele></trkpt>
+    <trkpt lat="47.201811" lon="9.311827"><ele>922</ele></trkpt>
+    <trkpt lat="47.201888" lon="9.311772"><ele>927</ele></trkpt>
+    <trkpt lat="47.20211" lon="9.311804"><ele>932</ele></trkpt>
+    <trkpt lat="47.202147" lon="9.311808"><ele>932</ele></trkpt>
+    <trkpt lat="47.202176" lon="9.311835"><ele>934</ele></trkpt>
+    <trkpt lat="47.202194" lon="9.311856"><ele>935</ele></trkpt>
+    <trkpt lat="47.202273" lon="9.311959"><ele>944</ele></trkpt>
+    <trkpt lat="47.202291" lon="9.311957"><ele>944</ele></trkpt>
+    <trkpt lat="47.202273" lon="9.311959"><ele>944</ele></trkpt>
+    <trkpt lat="47.202194" lon="9.311856"><ele>935</ele></trkpt>
+    <trkpt lat="47.202176" lon="9.311835"><ele>934</ele></trkpt>
+    <trkpt lat="47.202147" lon="9.311808"><ele>932</ele></trkpt>
+    <trkpt lat="47.20211" lon="9.311804"><ele>931</ele></trkpt>
+    <trkpt lat="47.201888" lon="9.311772"><ele>927</ele></trkpt>
+    <trkpt lat="47.201811" lon="9.311827"><ele>922</ele></trkpt>
+    <trkpt lat="47.201811" lon="9.31174"><ele>921</ele></trkpt>
+    <trkpt lat="47.20181" lon="9.311717"><ele>921</ele></trkpt>
+    <trkpt lat="47.20118" lon="9.312007"><ele>919</ele></trkpt>
+    <trkpt lat="47.202877" lon="9.31342"><ele>991</ele></trkpt>
+    <trkpt lat="47.204301" lon="9.314465"><ele>1020</ele></trkpt>
+    <trkpt lat="47.206111" lon="9.312641"><ele>1032</ele></trkpt>
+    <trkpt lat="47.206583" lon="9.312019"><ele>1028</ele></trkpt>
+    <trkpt lat="47.206614" lon="9.311924"><ele>1028</ele></trkpt>
+    <trkpt lat="47.206654" lon="9.311607"><ele>1030</ele></trkpt>
+    <trkpt lat="47.207983" lon="9.310867"><ele>1033</ele></trkpt>
+    <trkpt lat="47.21283" lon="9.313197"><ele>1056</ele></trkpt>
+    <trkpt lat="47.215857" lon="9.31488"><ele>1069</ele></trkpt>
+    <trkpt lat="47.21732" lon="9.317281"><ele>1071</ele></trkpt>
+    <trkpt lat="47.2163" lon="9.315182"><ele>1069</ele></trkpt>
+    <trkpt lat="47.215381" lon="9.307996"><ele>1221</ele></trkpt>
+    <trkpt lat="47.212316" lon="9.292886"><ele>1297</ele></trkpt>
+    <trkpt lat="47.211635" lon="9.290303"><ele>1310</ele></trkpt>
+    <trkpt lat="47.211454" lon="9.289597"><ele>1311</ele></trkpt>
+    <trkpt lat="47.211482" lon="9.28941"><ele>1310</ele></trkpt>
+    <trkpt lat="47.210782" lon="9.287651"><ele>1309</ele></trkpt>
+    <trkpt lat="47.211482" lon="9.28941"><ele>1310</ele></trkpt>
+    <trkpt lat="47.211454" lon="9.289597"><ele>1311</ele></trkpt>
+    <trkpt lat="47.21161" lon="9.290204"><ele>1310</ele></trkpt>
+    <trkpt lat="47.207606" lon="9.29047"><ele>1257</ele></trkpt>
+    <trkpt lat="47.207154" lon="9.290581"><ele>1233</ele></trkpt>
+    <trkpt lat="47.206298" lon="9.291717"><ele>1198</ele></trkpt>
+    <trkpt lat="47.202388" lon="9.293375"><ele>1157</ele></trkpt>
+    <trkpt lat="47.202906" lon="9.304059"><ele>1102</ele></trkpt>
+    <trkpt lat="47.20341" lon="9.304706"><ele>1096</ele></trkpt>
+    <trkpt lat="47.202826" lon="9.3081"><ele>996</ele></trkpt>
+    <trkpt lat="47.202848" lon="9.30826"><ele>994</ele></trkpt>
+    <trkpt lat="47.202679" lon="9.30812"><ele>993</ele></trkpt>
+    <trkpt lat="47.20263" lon="9.308673"><ele>987</ele></trkpt>
+    <trkpt lat="47.200954" lon="9.308981"><ele>945</ele></trkpt>
+    <trkpt lat="47.199494" lon="9.308276"><ele>927</ele></trkpt>
+    <trkpt lat="47.199474" lon="9.308011"><ele>929</ele></trkpt>
+  </trkseg></trk>
+</gpx>

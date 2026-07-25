@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Ferienhaus Sigerst (BRouter/OSM)" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata><name>Lisighaus – Wildhuser Schafberg (Track endet kurz unterhalb des Gipfels)</name>
+    <desc>Automatisch generierter Verlauf entlang des OSM-Wanderwegnetzes (BRouter, Profil hiking-mountain). Grobe Auflösung – vor Nutzung im Gelände prüfen.</desc>
+  </metadata>
+  <wpt lat="47.20132" lon="9.34198"><name>Start: Lisighaus</name></wpt>
+  <wpt lat="47.22943" lon="9.35205"><name>Wildhuser Schofberg 2216 m</name></wpt>
+  <trk><name>Lisighaus – Wildhuser Schafberg (Track endet kurz unterhalb des Gipfels)</name><trkseg>
+    <trkpt lat="47.200971" lon="9.341911"><ele>1040</ele></trkpt>
+    <trkpt lat="47.200989" lon="9.342499"><ele>1038</ele></trkpt>
+    <trkpt lat="47.202228" lon="9.343588"><ele>1061</ele></trkpt>
+    <trkpt lat="47.202313" lon="9.344182"><ele>1063</ele></trkpt>
+    <trkpt lat="47.202738" lon="9.344139"><ele>1071</ele></trkpt>
+    <trkpt lat="47.202943" lon="9.344562"><ele>1083</ele></trkpt>
+    <trkpt lat="47.203391" lon="9.346085"><ele>1094</ele></trkpt>
+    <trkpt lat="47.203485" lon="9.345726"><ele>1096</ele></trkpt>
+    <trkpt lat="47.204707" lon="9.349045"><ele>1112</ele></trkpt>
+    <trkpt lat="47.204625" lon="9.349676"><ele>1110</ele></trkpt>
+    <trkpt lat="47.204909" lon="9.350801"><ele>1101</ele></trkpt>
+    <trkpt lat="47.205197" lon="9.352264"><ele>1094</ele></trkpt>
+    <trkpt lat="47.205247" lon="9.352249"><ele>1094</ele></trkpt>
+    <trkpt lat="47.206367" lon="9.35275"><ele>1109</ele></trkpt>
+    <trkpt lat="47.206436" lon="9.352677"><ele>1114</ele></trkpt>
+    <trkpt lat="47.207663" lon="9.35266"><ele>1167</ele></trkpt>
+    <trkpt lat="47.209079" lon="9.352339"><ele>1205</ele></trkpt>
+    <trkpt lat="47.210286" lon="9.351141"><ele>1242</ele></trkpt>
+    <trkpt lat="47.211005" lon="9.350342"><ele>1255</ele></trkpt>
+    <trkpt lat="47.211737" lon="9.349051"><ele>1282</ele></trkpt>
+    <trkpt lat="47.213146" lon="9.345999"><ele>1334</ele></trkpt>
+    <trkpt lat="47.213291" lon="9.345958"><ele>1336</ele></trkpt>
+    <trkpt lat="47.214386" lon="9.346274"><ele>1356</ele></trkpt>
+    <trkpt lat="47.227569" lon="9.354145"><ele>2192</ele></trkpt>
+    <trkpt lat="47.227533" lon="9.352322"><ele>2263</ele></trkpt>
+  </trkseg></trk>
+</gpx>

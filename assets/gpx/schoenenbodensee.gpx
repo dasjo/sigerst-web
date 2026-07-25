@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Ferienhaus Sigerst (BRouter/OSM)" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata><name>Ferienhaus – Badi Schönenbodensee</name>
+    <desc>Automatisch generierter Verlauf entlang des OSM-Wanderwegnetzes (BRouter, Profil hiking-mountain). Grobe Auflösung – vor Nutzung im Gelände prüfen.</desc>
+  </metadata>
+  <wpt lat="47.201" lon="9.36575"><name>Start: Ferienhaus Sigerst</name></wpt>
+  <wpt lat="47.2073" lon="9.3674"><name>Badi Schönenbodensee</name></wpt>
+  <trk><name>Ferienhaus – Badi Schönenbodensee</name><trkseg>
+    <trkpt lat="47.202293" lon="9.365148"><ele>1028</ele></trkpt>
+    <trkpt lat="47.204843" lon="9.37566"><ele>1102</ele></trkpt>
+    <trkpt lat="47.205066" lon="9.374811"><ele>1108</ele></trkpt>
+    <trkpt lat="47.205704" lon="9.375242"><ele>1118</ele></trkpt>
+    <trkpt lat="47.205679" lon="9.375023"><ele>1117</ele></trkpt>
+    <trkpt lat="47.205631" lon="9.374566"><ele>1117</ele></trkpt>
+    <trkpt lat="47.205909" lon="9.374497"><ele>1118</ele></trkpt>
+    <trkpt lat="47.206612" lon="9.365834"><ele>1101</ele></trkpt>
+    <trkpt lat="47.206907" lon="9.3655"><ele>1100</ele></trkpt>
+    <trkpt lat="47.207508" lon="9.365961"><ele>1099</ele></trkpt>
+    <trkpt lat="47.207794" lon="9.366855"><ele>1100</ele></trkpt>
+  </trkseg></trk>
+</gpx>

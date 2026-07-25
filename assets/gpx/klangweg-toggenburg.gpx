@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Ferienhaus Sigerst (BRouter/OSM)" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata><name>Klangweg: Alp Sellamatt – Iltios – Oberdorf</name>
+    <desc>Automatisch generierter Verlauf entlang des OSM-Wanderwegnetzes (BRouter, Profil hiking-mountain). Grobe Auflösung – vor Nutzung im Gelände prüfen.</desc>
+  </metadata>
+  <wpt lat="47.18244" lon="9.29702"><name>Start: Alp Sellamatt (Bergstation)</name></wpt>
+  <wpt lat="47.18531" lon="9.31182"><name>Iltios</name></wpt>
+  <wpt lat="47.19261" lon="9.34588"><name>Wildhaus Oberdorf</name></wpt>
+  <trk><name>Klangweg: Alp Sellamatt – Iltios – Oberdorf</name><trkseg>
+    <trkpt lat="47.182565" lon="9.298811"><ele>1384</ele></trkpt>
+    <trkpt lat="47.182661" lon="9.299306"><ele>1381</ele></trkpt>
+    <trkpt lat="47.182678" lon="9.299837"><ele>1378</ele></trkpt>
+    <trkpt lat="47.180464" lon="9.30358"><ele>1358</ele></trkpt>
+    <trkpt lat="47.179761" lon="9.30357"><ele>1357</ele></trkpt>
+    <trkpt lat="47.179428" lon="9.306456"><ele>1321</ele></trkpt>
+    <trkpt lat="47.180373" lon="9.308708"><ele>1318</ele></trkpt>
+    <trkpt lat="47.180909" lon="9.308732"><ele>1317</ele></trkpt>
+    <trkpt lat="47.184845" lon="9.311679"><ele>1343</ele></trkpt>
+    <trkpt lat="47.185125" lon="9.311694"><ele>1342</ele></trkpt>
+    <trkpt lat="47.185154" lon="9.312194"><ele>1341</ele></trkpt>
+    <trkpt lat="47.18518" lon="9.312199"><ele>1341</ele></trkpt>
+    <trkpt lat="47.185258" lon="9.311813"><ele>1341</ele></trkpt>
+    <trkpt lat="47.18518" lon="9.312199"><ele>1341</ele></trkpt>
+    <trkpt lat="47.184761" lon="9.312207"><ele>1342</ele></trkpt>
+    <trkpt lat="47.184304" lon="9.314895"><ele>1319</ele></trkpt>
+    <trkpt lat="47.184743" lon="9.320212"><ele>1259</ele></trkpt>
+    <trkpt lat="47.185477" lon="9.321474"><ele>1255</ele></trkpt>
+    <trkpt lat="47.188554" lon="9.327617"><ele>1167</ele></trkpt>
+    <trkpt lat="47.189244" lon="9.329894"><ele>1160</ele></trkpt>
+    <trkpt lat="47.188709" lon="9.33003"><ele>1161</ele></trkpt>
+    <trkpt lat="47.189602" lon="9.332563"><ele>1182</ele></trkpt>
+    <trkpt lat="47.189457" lon="9.33514"><ele>1206</ele></trkpt>
+    <trkpt lat="47.190035" lon="9.337694"><ele>1197</ele></trkpt>
+    <trkpt lat="47.189717" lon="9.33943"><ele>1203</ele></trkpt>
+    <trkpt lat="47.190712" lon="9.344732"><ele>1227</ele></trkpt>
+    <trkpt lat="47.191489" lon="9.345058"><ele>1225</ele></trkpt>
+    <trkpt lat="47.191558" lon="9.345107"><ele>1224</ele></trkpt>
+    <trkpt lat="47.192002" lon="9.345861"><ele>1220</ele></trkpt>
+    <trkpt lat="47.192423" lon="9.346239"><ele>1214</ele></trkpt>
+  </trkseg></trk>
+</gpx>

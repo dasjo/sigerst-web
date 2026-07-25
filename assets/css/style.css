@@ -173,6 +173,112 @@ a:hover { color: var(--color-link-hover); }
 .site-footer a { color: var(--color-muted); }
 .site-footer a:hover { color: var(--color-link); }
 
+/* Wide layout (map page) */
+.wrap--wide { max-width: 1100px; }
+
+/* Karte */
+.map-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin: 1rem 0 1.25rem;
+  padding: 1rem 1.25rem;
+  background: var(--color-card);
+  border: 1px solid #eee;
+  border-radius: 8px;
+}
+.map-toolbar fieldset { border: none; padding: 0; margin: 0; }
+.map-toolbar legend {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--color-muted);
+  margin-bottom: 0.35rem;
+  padding: 0;
+}
+.map-toolbar label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-right: 0.85rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+.map-toolbar select {
+  font: inherit;
+  font-size: 0.95rem;
+  padding: 0.3rem 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+}
+.karte-layout {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  flex-wrap: wrap-reverse;
+}
+.karte-sidebar { flex: 1 1 280px; max-width: 340px; }
+.karte-mapwrap { flex: 3 1 480px; min-width: 280px; }
+#aktivitaeten-map {
+  height: 65vh;
+  min-height: 420px;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  background: #eef1ea;
+}
+.map-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.9rem;
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  margin: 0.75rem 0 1rem;
+}
+.map-legend .dot {
+  display: inline-block;
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 50%;
+  margin-right: 0.3rem;
+  vertical-align: middle;
+}
+.map-hinweis {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  margin-top: 0.75rem;
+}
+.aktivitaeten-liste {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+.aktivitaeten-liste li {
+  background: var(--color-card);
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 0.65rem 0.85rem;
+  cursor: pointer;
+  transition: background 0.15s, opacity 0.15s;
+}
+.aktivitaeten-liste li:hover { background: #f3f6f1; }
+.aktivitaeten-liste li.is-hidden { display: none; }
+.aktivitaeten-liste .titel { font-weight: 600; display: block; margin-bottom: 0.15rem; }
+.aktivitaeten-liste .meta { font-size: 0.85rem; color: var(--color-muted); }
+.badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  background: #eef1ea;
+  color: var(--color-muted);
+  margin-right: 0.25rem;
+}
+.leaflet-popup-content { font-family: var(--font-sans); font-size: 0.9rem; }
+.leaflet-popup-content .badge { margin-bottom: 0.2rem; }
+
 /* Aktivitäten link list */
 .aktivitaeten-list { list-style: none; padding-left: 0; }
 .aktivitaeten-list li {

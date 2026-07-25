@@ -8,6 +8,8 @@ description: Skifahren, Winter, Wandern, Mountainbike und Kulinarik rund um Wild
 
 Rund um das Ferienhaus Sigerst gibt es das ganze Jahr viel zu erleben. Hier die Übersicht – Details auf den einzelnen Seiten.
 
+**[→ Alle Touren auf der Karte ansehen]({{ site.baseurl }}/karte/)** – mit Filter nach Dauer, Schwierigkeit und Saison.
+
 <ul class="aktivitaeten-list">
   <li>
     <a href="{{ site.baseurl }}/skifahren/">Skifahren</a>
@@ -19,7 +21,7 @@ Rund um das Ferienhaus Sigerst gibt es das ganze Jahr viel zu erleben. Hier die 
   </li>
   <li>
     <a href="{{ site.baseurl }}/wandern-ausflugsziele/">Wandern &amp; Ausflüge</a>
-    <p>Gamplüt, Schafberg, Thurwasserfälle, Klangweg, Schönenbodensee und weitere Touren im Toggenburg.</p>
+    <p>Gamplüt, Gulmen, Schafberg, Thurwasserfälle, Klettergarten Stoss, Klangweg, Schönenbodensee und weitere Touren im Toggenburg.</p>
   </li>
   <li>
     <a href="{{ site.baseurl }}/mountainbike/">Mountainbike</a>

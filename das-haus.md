@@ -27,9 +27,9 @@ Das **Ferienhaus Sigerst** ist ein traditionelles, liebevoll saniertes Toggenbur
 
 - **Hotpot** – Entspannung unter dem Sternenhimmel
 - **Feuerstelle**
-- **Natürlicher Bach** auf dem Grundstück
+- **Pizza-Holzofen**
+- **Natürlicher Bach** angrenzend zum Grundstück
 - **Trampolin, Schaukel**
-- Viele ruhige Plätze im Garten
 
 ## Heizung & Nachhaltigkeit
 
@@ -42,7 +42,3 @@ Das **Ferienhaus Sigerst** ist ein traditionelles, liebevoll saniertes Toggenbur
 - Zugang nur zu Fuß (ca. 5–10 Min bergab)
 - Im Winter feste Schuhe empfohlen
 - Nicht barrierefrei
-
----
-
-[Anreise & Parken]({{ site.baseurl }}/anreise/) · [Aktivitäten]({{ site.baseurl }}/aktivitaeten/) · [Kontakt]({{ site.baseurl }}/kontakt/)

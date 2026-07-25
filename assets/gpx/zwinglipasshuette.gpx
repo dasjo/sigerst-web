@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="Ferienhaus Sigerst (BRouter/OSM)" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata><name>Lisighaus – Gamplüt – Zwinglipasshütte</name>
+    <desc>Automatisch generierter Verlauf entlang des OSM-Wanderwegnetzes (BRouter, Profil hiking-mountain). Grobe Auflösung – vor Nutzung im Gelände prüfen.</desc>
+  </metadata>
+  <wpt lat="47.20132" lon="9.34198"><name>Start: Lisighaus</name></wpt>
+  <wpt lat="47.21292" lon="9.34433"><name>Gamplüt</name></wpt>
+  <wpt lat="47.23321" lon="9.37615"><name>Zwinglipasshütte SAC</name></wpt>
+  <trk><name>Lisighaus – Gamplüt – Zwinglipasshütte</name><trkseg>
+    <trkpt lat="47.200971" lon="9.341911"><ele>1040</ele></trkpt>
+    <trkpt lat="47.20111" lon="9.339823"><ele>1047</ele></trkpt>
+    <trkpt lat="47.201381" lon="9.339793"><ele>1049</ele></trkpt>
+    <trkpt lat="47.20118" lon="9.338923"><ele>1049</ele></trkpt>
+    <trkpt lat="47.202156" lon="9.33843"><ele>1061</ele></trkpt>
+    <trkpt lat="47.203517" lon="9.339086"><ele>1102</ele></trkpt>
+    <trkpt lat="47.20546" lon="9.338254"><ele>1169</ele></trkpt>
+    <trkpt lat="47.205471" lon="9.338221"><ele>1169</ele></trkpt>
+    <trkpt lat="47.205983" lon="9.338184"><ele>1180</ele></trkpt>
+    <trkpt lat="47.206546" lon="9.339147"><ele>1212</ele></trkpt>
+    <trkpt lat="47.206869" lon="9.338747"><ele>1227</ele></trkpt>
+    <trkpt lat="47.208578" lon="9.338894"><ele>1275</ele></trkpt>
+    <trkpt lat="47.208822" lon="9.338941"><ele>1277</ele></trkpt>
+    <trkpt lat="47.210856" lon="9.341389"><ele>1335</ele></trkpt>
+    <trkpt lat="47.212153" lon="9.34163"><ele>1348</ele></trkpt>
+    <trkpt lat="47.21304" lon="9.34308"><ele>1352</ele></trkpt>
+    <trkpt lat="47.213295" lon="9.343851"><ele>1350</ele></trkpt>
+    <trkpt lat="47.21383" lon="9.345058"><ele>1348</ele></trkpt>
+    <trkpt lat="47.213146" lon="9.345999"><ele>1334</ele></trkpt>
+    <trkpt lat="47.211114" lon="9.350849"><ele>1256</ele></trkpt>
+    <trkpt lat="47.211066" lon="9.352788"><ele>1233</ele></trkpt>
+    <trkpt lat="47.214802" lon="9.356391"><ele>1247</ele></trkpt>
+    <trkpt lat="47.21786" lon="9.356581"><ele>1388</ele></trkpt>
+    <trkpt lat="47.220273" lon="9.365207"><ele>1418</ele></trkpt>
+    <trkpt lat="47.221184" lon="9.369536"><ele>1434</ele></trkpt>
+    <trkpt lat="47.222886" lon="9.371355"><ele>1453</ele></trkpt>
+    <trkpt lat="47.227751" lon="9.375357"><ele>1791</ele></trkpt>
+    <trkpt lat="47.23064" lon="9.374953"><ele>1879</ele></trkpt>
+    <trkpt lat="47.232324" lon="9.375837"><ele>1969</ele></trkpt>
+    <trkpt lat="47.23283" lon="9.376043"><ele>1985</ele></trkpt>
+    <trkpt lat="47.233243" lon="9.376273"><ele>2000</ele></trkpt>
+  </trkseg></trk>
+</gpx>

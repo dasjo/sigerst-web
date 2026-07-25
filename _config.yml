@@ -8,6 +8,11 @@ markdown: kramdown
 highlighter: rouge
 permalink: pretty
 
+# Aktivitäten-Datenbank (eine Datei pro Aktivität in _aktivitaeten/) – für Kartenseite
+collections:
+  aktivitaeten:
+    output: false
+
 # Gäste-Link: /kontakt/?gast=<token> (siehe README)
 guest_link_param: gast
 guest_link_token: sigerst-guest
