@@ -24,9 +24,11 @@ Eine Datei pro Aktivität. Das Front Matter ist die Datenstruktur, der Body eine
 | `anreise` | String | – | Vom Ferienhaus |
 | `seite` | Pfad | – | Detailseite/-anker auf der Website |
 | `links` | Liste | – | `titel` + `url` |
+| `bild` | Pfad | – | Bild in `/assets/images/aktivitaeten/`, `null` falls noch keins vorliegt |
+| `bild_quelle` | String | – | Herkunft/Attribution des Bildes (z. B. «Komoot-Tourenfoto, Josef Kruckenberg») |
 
 Alle Start-Koordinaten sind über die swisstopo-API (api3.geo.admin.ch) verifiziert.
 
-⚠️ Die GPX-Tracks sind automatisch entlang des OSM-Wanderwegnetzes generiert (BRouter, Profil `hiking-mountain`) und **grob aufgelöst** – für die Kartenübersicht geeignet, nicht zur Navigation im Gelände. Bessere Tracks (z. B. Schweiz-Mobil-/Outdooractive-Export) können die Dateien in `docs/assets/gpx/` einfach ersetzen.
+⚠️ GPX-Tracks stammen entweder aus einem echten Komoot-GPX-Export (`gpx_quelle` nennt die Tour) oder – falls kein Export möglich war – automatisch entlang des OSM-Wanderwegnetzes generiert (BRouter, Profil `hiking-mountain`) und dann **grob aufgelöst**; das ist jeweils in `gpx_quelle` vermerkt. Komoot-Exporte wurden zur Dateigrößen-Reduktion auf ca. 80–140 Punkte downgesamplet (Höhen-/Zeitangaben entfernt, nur Lat/Lon).
 
 ⚠️ **Komoot-Links:** Einige Einträge verlinken auf private Komoot-Touren („Sichtbarkeit: Nur für dich"). Diese Links funktionieren für Website-Besucher nicht, bis die Sichtbarkeit in Komoot auf „Öffentlich" oder „Follower" gestellt wird.

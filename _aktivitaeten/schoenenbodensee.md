@@ -19,11 +19,13 @@ start:
 distanz_km: null
 hoehenmeter: null
 familienfreundlich: true
-anreise: "15–20 Min zu Fuß durch Wildhaus"
+anreise: "Ab Ferienhaus: ca. 15–20 Min zu Fuß durch Wildhaus"
 seite: /wandern-ausflugsziele/#schönenbodensee
 links:
   - titel: Wikipedia
     url: https://de.wikipedia.org/wiki/Schönenbodensee
+bild: /assets/images/aktivitaeten/schoenenbodensee.jpg
+bild_quelle: "Foto: Adrian Michael, CC BY-SA 3.0 (Wikimedia Commons)"
 ---
 
 Idyllischer Bergsee im Flachmoor mit betreuter Badeanstalt (seit 1930), Tretbooten und Kiosk. Das nächstgelegene Ausflugsziel vom Haus.

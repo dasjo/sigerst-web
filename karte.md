@@ -80,7 +80,8 @@ Alle Touren und Ausflugsziele aus der [Aktivitäten-Übersicht]({{ site.baseurl 
       "hoehenmeter": {{ a.hoehenmeter | jsonify }},
       "familienfreundlich": {{ a.familienfreundlich | jsonify }},
       "anreise": {{ a.anreise | jsonify }},
-      "seite": {{ a.seite | jsonify }}
+      "seite": {{ a.seite | jsonify }},
+      "bild": {{ a.bild | jsonify }}
     }{% unless forloop.last %},{% endunless %}
     {% endfor %}
   ];
@@ -114,8 +115,12 @@ Alle Touren und Ausflugsziele aus der [Aktivitäten-Übersicht]({{ site.baseurl 
     var extra = [];
     if (a.distanz_km) extra.push(a.distanz_km + " km");
     if (a.hoehenmeter) extra.push(a.hoehenmeter + " Hm");
+    var bildHtml = a.bild
+      ? '<img src="' + BASEURL + a.bild + '" alt="" class="popup-bild" loading="lazy">'
+      : "";
     return (
       '<div class="popup-aktivitaet">' +
+      bildHtml +
       "<strong>" + escapeHtml(a.title) + "</strong><br>" +
       '<span class="badge">' + escapeHtml(a.schwierigkeit_wert) + "</span>" +
       '<span class="badge">' + a.dauer_von + "–" + a.dauer_bis + " h</span>" +
@@ -186,9 +191,69 @@ Alle Touren und Ausflugsziele aus der [Aktivitäten-Übersicht]({{ site.baseurl 
     var eintraege = [];
     var listeEl = document.getElementById("aktivitaeten-liste");
 
+    // Aktuell ausgewählte Aktivität: hebt Track hervor (zuoberst + Animation)
+    // und zeigt Start-/Endpunkt des Tracks als kleine Kreise.
+    var aktivesEintrag = null;
+    var aktiveMarker = [];
+
+    function pfadElement(layer) {
+      return layer.getElement ? layer.getElement() : layer._path;
+    }
+
+    function waehleAktivitaet(eintrag) {
+      if (aktivesEintrag === eintrag) return;
+
+      if (aktivesEintrag) {
+        aktivesEintrag.li.classList.remove("aktiv");
+        if (aktivesEintrag.linie) {
+          aktivesEintrag.linie.setStyle({ weight: 4, opacity: 0.75 });
+          var vorherigesEl = pfadElement(aktivesEintrag.linie);
+          if (vorherigesEl) vorherigesEl.classList.remove("track-aktiv");
+        }
+      }
+      aktiveMarker.forEach(function (m) { map.removeLayer(m); });
+      aktiveMarker = [];
+
+      aktivesEintrag = eintrag;
+      eintrag.li.classList.add("aktiv");
+
+      if (eintrag.linie) {
+        eintrag.linie.setStyle({ weight: 6, opacity: 1 });
+        eintrag.linie.bringToFront();
+        var el = pfadElement(eintrag.linie);
+        if (el) el.classList.add("track-aktiv");
+      }
+
+      if (eintrag.trkpts && eintrag.trkpts.length > 1) {
+        var start = eintrag.trkpts[0];
+        var ende = eintrag.trkpts[eintrag.trkpts.length - 1];
+        var startMarker = L.circleMarker(start, {
+          radius: 7,
+          color: "#fff",
+          weight: 2,
+          fillColor: "#2e8b3c",
+          fillOpacity: 1
+        }).bindTooltip("Start", { direction: "top", offset: [0, -6] });
+        var endMarker = L.circleMarker(ende, {
+          radius: 7,
+          color: "#fff",
+          weight: 2,
+          fillColor: "#b8322f",
+          fillOpacity: 1
+        }).bindTooltip("Ende", { direction: "top", offset: [0, -6] });
+        startMarker.addTo(map);
+        endMarker.addTo(map);
+        startMarker.bringToFront();
+        endMarker.bringToFront();
+        aktiveMarker.push(startMarker, endMarker);
+      }
+    }
+
     DATA.forEach(function (a) {
       var farbeKat = farbe(a.kategorie);
       var layerGroup = L.layerGroup();
+
+      var eintrag = { data: a, layerGroup: layerGroup, li: null, linie: null, trkpts: null };
 
       if (a.start_koordinaten && a.start_koordinaten.length === 2) {
         var marker = L.circleMarker(a.start_koordinaten, {
@@ -198,19 +263,25 @@ Alle Touren und Ausflugsziele aus der [Aktivitäten-Übersicht]({{ site.baseurl 
           fillColor: farbeKat,
           fillOpacity: 0.9
         }).bindPopup(popupHtml(a));
+        marker.on("click", function () { waehleAktivitaet(eintrag); });
         layerGroup.addLayer(marker);
         alleMarker.push(marker);
       }
 
       layerGroup.addTo(map);
 
+      var kategorieLabel = a.kategorie ? a.kategorie.charAt(0).toUpperCase() + a.kategorie.slice(1) : "";
+      var badges =
+        '<span class="badge badge-kategorie">' + escapeHtml(kategorieLabel) + "</span>" +
+        '<span class="badge">' + escapeHtml(a.schwierigkeit_wert) + "</span>" +
+        '<span class="badge">' + a.dauer_von + "–" + a.dauer_bis + " h</span>" +
+        (a.hoehenmeter ? '<span class="badge">' + a.hoehenmeter + " Hm</span>" : "") +
+        (a.familienfreundlich ? '<span class="badge badge-familie">Familienfreundlich</span>' : "");
+
       var li = document.createElement("li");
       li.innerHTML =
         '<span class="titel">' + escapeHtml(a.title) + "</span>" +
-        '<span class="meta">' +
-        '<span class="badge">' + escapeHtml(a.schwierigkeit_wert) + "</span>" +
-        '<span class="badge">' + a.dauer_von + "–" + a.dauer_bis + " h</span>" +
-        "</span>";
+        '<span class="meta">' + badges + "</span>";
       li.addEventListener("click", function () {
         if (a.start_koordinaten) {
           map.setView(a.start_koordinaten, 14, { animate: true });
@@ -218,10 +289,10 @@ Alle Touren und Ausflugsziele aus der [Aktivitäten-Übersicht]({{ site.baseurl 
         layerGroup.eachLayer(function (l) {
           if (l.openPopup) l.openPopup();
         });
+        waehleAktivitaet(eintrag);
       });
       listeEl.appendChild(li);
-
-      var eintrag = { data: a, layerGroup: layerGroup, li: li };
+      eintrag.li = li;
       eintraege.push(eintrag);
 
       if (a.gpx) {
@@ -232,7 +303,10 @@ Alle Touren und Ausflugsziele aus der [Aktivitäten-Übersicht]({{ site.baseurl 
               weight: 4,
               opacity: 0.75
             }).bindPopup(popupHtml(a));
+            linie.on("click", function () { waehleAktivitaet(eintrag); });
             layerGroup.addLayer(linie);
+            eintrag.linie = linie;
+            eintrag.trkpts = gpx.trkpts;
           }
           gpx.wpts.forEach(function (w) {
             if (w.name && w.name.indexOf(a.start_name.split(",")[0].split("(")[0].trim()) === 0) return;
@@ -287,6 +361,11 @@ Alle Touren und Ausflugsziele aus der [Aktivitäten-Übersicht]({{ site.baseurl 
         } else {
           if (map.hasLayer(e.layerGroup)) map.removeLayer(e.layerGroup);
           e.li.classList.add("is-hidden");
+          if (aktivesEintrag === e) {
+            aktiveMarker.forEach(function (m) { map.removeLayer(m); });
+            aktiveMarker = [];
+            aktivesEintrag = null;
+          }
         }
       });
     }

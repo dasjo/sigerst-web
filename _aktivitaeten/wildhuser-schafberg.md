@@ -19,11 +19,13 @@ start:
 distanz_km: null
 hoehenmeter: 950
 familienfreundlich: false
-anreise: "ÖV bis Wildhaus oder Auto nach Lisighaus"
+anreise: "Ab Ferienhaus: ca. 5–10 Min Fussweg zum Parkplatz, dann 5 Min Auto zur Gamplütbahn-Talstation in Lisighaus (oder ÖV bis Wildhaus)"
 seite: /wandern-ausflugsziele/#wildhuser-schafberg-2216-m
 links:
   - titel: SAC Tourenportal
     url: https://www.sac-cas.ch/de/huetten-und-touren/sac-tourenportal/wildhuser-schofberg-schafberg-2216/berg-und-alpinwandern/
+bild: null
+bild_quelle: "Kein Foto auf SAC-Tourenportal gefunden (nur Kartenansicht)"
 ---
 
 Imposanter Aussichtsberg der Churfirsten mit 360°-Gipfelblick auf Toggenburg, Alpstein und Glarner Alpen. Alpine Bergwanderung.

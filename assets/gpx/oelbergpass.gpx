@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="sigerst-import" xmlns="http://www.topografix.com/GPX/1/1">
+  <trk>
+    <name>oelbergpass</name>
+    <trkseg>
+      <trkpt lat="47.19978" lon="9.37040"></trkpt>
+      <trkpt lat="47.19851" lon="9.37536"></trkpt>
+      <trkpt lat="47.19787" lon="9.37835"></trkpt>
+      <trkpt lat="47.19816" lon="9.38433"></trkpt>
+      <trkpt lat="47.19742" lon="9.38613"></trkpt>
+      <trkpt lat="47.19603" lon="9.38759"></trkpt>
+      <trkpt lat="47.19497" lon="9.38810"></trkpt>
+      <trkpt lat="47.19575" lon="9.38457"></trkpt>
+      <trkpt lat="47.19366" lon="9.38662"></trkpt>
+      <trkpt lat="47.19370" lon="9.38316"></trkpt>
+      <trkpt lat="47.19281" lon="9.38363"></trkpt>
+      <trkpt lat="47.19161" lon="9.38768"></trkpt>
+      <trkpt lat="47.19119" lon="9.38457"></trkpt>
+      <trkpt lat="47.19047" lon="9.38318"></trkpt>
+      <trkpt lat="47.18832" lon="9.38729"></trkpt>
+      <trkpt lat="47.18572" lon="9.39146"></trkpt>
+      <trkpt lat="47.18330" lon="9.39434"></trkpt>
+      <trkpt lat="47.18161" lon="9.39091"></trkpt>
+      <trkpt lat="47.18104" lon="9.38736"></trkpt>
+      <trkpt lat="47.18062" lon="9.38501"></trkpt>
+      <trkpt lat="47.17976" lon="9.38241"></trkpt>
+      <trkpt lat="47.18081" lon="9.37965"></trkpt>
+      <trkpt lat="47.18147" lon="9.37456"></trkpt>
+      <trkpt lat="47.18203" lon="9.37154"></trkpt>
+      <trkpt lat="47.18238" lon="9.36897"></trkpt>
+      <trkpt lat="47.18344" lon="9.36676"></trkpt>
+      <trkpt lat="47.18292" lon="9.36385"></trkpt>
+      <trkpt lat="47.18268" lon="9.35619"></trkpt>
+      <trkpt lat="47.18196" lon="9.34823"></trkpt>
+      <trkpt lat="47.18298" lon="9.34552"></trkpt>
+      <trkpt lat="47.18584" lon="9.34792"></trkpt>
+      <trkpt lat="47.18832" lon="9.34814"></trkpt>
+      <trkpt lat="47.18977" lon="9.34975"></trkpt>
+      <trkpt lat="47.19052" lon="9.34747"></trkpt>
+      <trkpt lat="47.19115" lon="9.35070"></trkpt>
+      <trkpt lat="47.19113" lon="9.35421"></trkpt>
+      <trkpt lat="47.19120" lon="9.35912"></trkpt>
+      <trkpt lat="47.19240" lon="9.35998"></trkpt>
+      <trkpt lat="47.19505" lon="9.35907"></trkpt>
+      <trkpt lat="47.19800" lon="9.35727"></trkpt>
+      <trkpt lat="47.19951" lon="9.36167"></trkpt>
+      <trkpt lat="47.20090" lon="9.36187"></trkpt>
+      <trkpt lat="47.20202" lon="9.36310"></trkpt>
+      <trkpt lat="47.20293" lon="9.36955"></trkpt>
+      <trkpt lat="47.20304" lon="9.37179"></trkpt>
+      <trkpt lat="47.20193" lon="9.37234"></trkpt>
+    </trkseg>
+  </trk>
+</gpx>

@@ -215,11 +215,28 @@ a:hover { color: var(--color-link-hover); }
 .karte-layout {
   display: flex;
   gap: 1.5rem;
-  align-items: flex-start;
+  /* flex-wrap: wrap-reverse dreht die Kreuzachse um, daher bedeutet
+     align-items: flex-end hier "oben ausgerichtet" (siehe align-self unten) */
+  align-items: flex-end;
   flex-wrap: wrap-reverse;
 }
-.karte-sidebar { flex: 1 1 280px; max-width: 340px; }
-.karte-mapwrap { flex: 3 1 480px; min-width: 280px; }
+.karte-sidebar {
+  flex: 1 1 280px;
+  max-width: 340px;
+  align-self: flex-end;
+  height: 65vh;
+  min-height: 420px;
+  overflow-y: auto;
+  position: sticky;
+  top: 1rem;
+}
+.karte-mapwrap {
+  flex: 3 1 480px;
+  min-width: 280px;
+  align-self: flex-end;
+  position: sticky;
+  top: 1rem;
+}
 #aktivitaeten-map {
   height: 65vh;
   min-height: 420px;
@@ -251,9 +268,11 @@ a:hover { color: var(--color-link-hover); }
 .aktivitaeten-liste {
   list-style: none;
   padding: 0;
+  padding-right: 0.4rem;
   margin: 0;
   display: grid;
   gap: 0.5rem;
+  align-content: start;
 }
 .aktivitaeten-liste li {
   background: var(--color-card);
@@ -265,6 +284,7 @@ a:hover { color: var(--color-link-hover); }
 }
 .aktivitaeten-liste li:hover { background: #f3f6f1; }
 .aktivitaeten-liste li.is-hidden { display: none; }
+.aktivitaeten-liste li.aktiv { border-color: #2d5a27; box-shadow: 0 0 0 1px #2d5a27 inset; }
 .aktivitaeten-liste .titel { font-weight: 600; display: block; margin-bottom: 0.15rem; }
 .aktivitaeten-liste .meta { font-size: 0.85rem; color: var(--color-muted); }
 .badge {
@@ -275,9 +295,30 @@ a:hover { color: var(--color-link-hover); }
   background: #eef1ea;
   color: var(--color-muted);
   margin-right: 0.25rem;
+  margin-bottom: 0.2rem;
 }
+.badge-kategorie { background: #e4e9e0; color: #2d5a27; font-weight: 600; }
+.badge-familie { background: #eaf3ea; color: #2e6b2e; }
+
+/* Track-Hervorhebung bei Auswahl: fließender Dash-Effekt + liegt zuoberst (bringToFront im JS) */
+.track-aktiv {
+  stroke-dasharray: 12 8;
+  animation: track-fluss 0.8s linear infinite;
+}
+@keyframes track-fluss {
+  to { stroke-dashoffset: -20; }
+}
+
 .leaflet-popup-content { font-family: var(--font-sans); font-size: 0.9rem; }
 .leaflet-popup-content .badge { margin-bottom: 0.2rem; }
+.popup-bild {
+  display: block;
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+}
 
 /* Aktivitäten link list */
 .aktivitaeten-list { list-style: none; padding-left: 0; }
@@ -294,49 +335,3 @@ a:hover { color: var(--color-link-hover); }
 }
 .aktivitaeten-list a:hover { text-decoration: underline; }
 .aktivitaeten-list p { margin: 0.35rem 0 0; font-size: 0.95rem; color: var(--color-muted); }
-
-/* Embedded maps */
-.map-embed {
-  margin: 1.5rem 0;
-  max-width: 100%;
-  border-radius: 8px;
-  overflow: hidden;
-  border: 1px solid #eee;
-}
-.map-embed iframe {
-  display: block;
-  width: 100%;
-  max-width: 640px;
-  height: auto;
-  min-height: 280px;
-  aspect-ratio: 4 / 3;
-  border: 0;
-}
-
-/* Öffentlich vs. Gäste (JS setzt html.guest-mode) */
-.guest-only {
-  display: none;
-}
-html.guest-mode .guest-only {
-  display: block;
-}
-html.guest-mode .public-only {
-  display: none;
-}
-
-.cta-block {
-  margin: 1.5rem 0;
-}
-.btn-primary {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  font-weight: 600;
-  color: #fff;
-  background: var(--color-link);
-  text-decoration: none;
-  border-radius: 6px;
-}
-.btn-primary:hover {
-  background: var(--color-link-hover);
-  color: #fff;
-}

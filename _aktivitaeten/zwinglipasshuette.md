@@ -20,13 +20,15 @@ start:
 distanz_km: null
 hoehenmeter: null
 familienfreundlich: true
-anreise: "Ab Haus zu Fuß oder mit Gamplüt-Gondel starten"
+anreise: "Ab Ferienhaus: ca. 5–10 Min Fussweg zum Parkplatz, dann 5 Min Auto zur Gamplütbahn-Talstation in Lisighaus (oder zu Fuß)"
 seite: /wandern-ausflugsziele/#berghütten-für-mehrtagestouren
 links:
   - titel: SAC Toggenburg – Clubhütte
     url: https://sac-toggenburg.ch/clubhuette/
   - titel: Reservation
     url: https://www.alpsonline.org/reservation/calendar?hut_id=30&lang=de_CH
+bild: /assets/images/aktivitaeten/zwinglipasshuette.jpg
+bild_quelle: "Foto von sac-toggenburg.ch (Clubhütte)"
 ---
 
 SAC-Hütte am Zwinglipass (42 Schlafplätze) mit Aussicht bis zum Mönch. Basis für Altmann, Klettergarten Zwinglipass und Churfirsten-Touren. Hüttenschlafsack und Bargeld mitbringen.

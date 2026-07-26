@@ -20,11 +20,13 @@ start:
 distanz_km: null
 hoehenmeter: null
 familienfreundlich: true
-anreise: "10–15 Min Auto bis Parkplatz Laui, dann ca. 1.5 h Zustieg"
+anreise: "Ab Ferienhaus: ca. 5–10 Min Fussweg zum Parkplatz, dann 10 Min Auto zum Parkplatz Laui, Unterwasser, danach ca. 1.5 h Zustieg"
 seite: /wandern-ausflugsziele/#klettergarten-stoss
 links:
   - titel: Toggenburg.swiss
     url: https://toggenburg.swiss/de/map/poi/klettergarten-stoss-c9380b25-0191-418b-a1ca-51db20bc61ac.html
+bild: /assets/images/aktivitaeten/klettergarten-stoss.jpg
+bild_quelle: "Foto von toggenburg.swiss"
 ---
 
 Über 45 gut abgesicherte Routen (15–47 m) für die ganze Familie. Topo im «SAC Kletterführer Alpstein». Komplette Kletterausrüstung mitbringen.

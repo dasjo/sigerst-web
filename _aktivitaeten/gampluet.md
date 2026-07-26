@@ -19,11 +19,13 @@ start:
 distanz_km: null
 hoehenmeter: null
 familienfreundlich: true
-anreise: "10 Min zu Fuß zur Bushaltestelle Bären, dann Gondel oder Wanderung"
+anreise: "Ab Ferienhaus: ca. 5–10 Min Fussweg zum Parkplatz, dann 5 Min Auto zur Gamplütbahn-Talstation in Lisighaus, dann Gondel oder Wanderung"
 seite: /wandern-ausflugsziele/#gamplüt
 links:
   - titel: Gamplüt
     url: https://www.gamplüt.ch
+bild: /assets/images/aktivitaeten/gampluet.jpg
+bild_quelle: "Foto von gamplüt.ch"
 ---
 
 Hausberg-Klassiker: mit der solarbetriebenen Gondel oder zu Fuß zum Bergrestaurant Gamplüt. Ausgangspunkt für die Weiterwanderung zum Gulmen (separate Tour).
