@@ -287,6 +287,32 @@ a:hover { color: var(--color-link-hover); }
 .aktivitaeten-liste li.aktiv { border-color: #2d5a27; box-shadow: 0 0 0 1px #2d5a27 inset; }
 .aktivitaeten-liste .titel { font-weight: 600; display: block; margin-bottom: 0.15rem; }
 .aktivitaeten-liste .meta { font-size: 0.85rem; color: var(--color-muted); }
+.liste-detail-link {
+  display: inline-block;
+  margin-top: 0.4rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+.eintrag-details {
+  display: none;
+  margin-top: 0.6rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid #eee;
+}
+.aktivitaeten-liste li.aktiv .eintrag-details { display: block; }
+.eintrag-bild {
+  display: block;
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+}
+.eintrag-info {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  line-height: 1.5;
+}
 .badge {
   display: inline-block;
   font-size: 0.75rem;
@@ -309,15 +335,90 @@ a:hover { color: var(--color-link-hover); }
   to { stroke-dashoffset: -20; }
 }
 
-.leaflet-popup-content { font-family: var(--font-sans); font-size: 0.9rem; }
-.leaflet-popup-content .badge { margin-bottom: 0.2rem; }
-.popup-bild {
-  display: block;
+/* Karte: mobile Layout */
+@media (max-width: 760px) {
+  .karte-layout {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    gap: 1rem;
+  }
+  .karte-mapwrap {
+    order: 1;
+    position: static;
+    min-width: 0;
+    width: 100%;
+  }
+  .karte-sidebar {
+    order: 2;
+    position: static;
+    max-width: none;
+    width: 100%;
+    height: auto;
+    max-height: 55vh;
+    min-height: 0;
+  }
+  #aktivitaeten-map {
+    height: 50vh;
+    min-height: 300px;
+  }
+  .map-toolbar {
+    gap: 0.75rem 1rem;
+    padding: 0.85rem 1rem;
+  }
+  .map-toolbar label { margin-right: 0.6rem; }
+}
+
+/* Aktivitäten-Detailseite */
+.aktivitaet-detail .breadcrumb {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  margin-bottom: 1rem;
+}
+.aktivitaet-hero {
   width: 100%;
-  height: 120px;
+  max-height: 380px;
   object-fit: cover;
-  border-radius: 6px;
-  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+.aktivitaet-badges { margin-bottom: 1rem; }
+.aktivitaet-content { margin-bottom: 1.5rem; }
+.aktivitaet-fakten {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.4rem 1rem;
+  margin: 0 0 1.5rem;
+  padding: 1rem 1.25rem;
+  background: var(--color-card);
+  border: 1px solid #eee;
+  border-radius: 8px;
+}
+.aktivitaet-fakten dt {
+  font-weight: 600;
+  color: var(--color-muted);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.aktivitaet-fakten dd { margin: 0; }
+.aktivitaet-fakten .quelle { font-size: 0.8rem; color: var(--color-muted); }
+.aktivitaet-map {
+  height: 50vh;
+  min-height: 320px;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  background: #eef1ea;
+  margin-bottom: 1.5rem;
+}
+.aktivitaet-links { padding-left: 1.2rem; }
+.aktivitaet-links li { margin-bottom: 0.35rem; }
+.bild-quelle { font-size: 0.8rem; color: var(--color-muted); margin-top: -0.5rem; }
+@media (max-width: 760px) {
+  .aktivitaet-fakten { grid-template-columns: 1fr; }
+  .aktivitaet-fakten dt { margin-top: 0.5rem; }
+  .aktivitaet-fakten dt:first-child { margin-top: 0; }
+  .aktivitaet-map { height: 45vh; min-height: 260px; }
 }
 
 /* Aktivitäten link list */

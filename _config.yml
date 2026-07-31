@@ -11,7 +11,17 @@ permalink: pretty
 # Aktivitäten-Datenbank (eine Datei pro Aktivität in _aktivitaeten/) – für Kartenseite
 collections:
   aktivitaeten:
-    output: false
+    output: true
+    permalink: /aktivitaeten/:path/
+
+# Eigene Detailseite pro Aktivität (aus der Collection generiert)
+defaults:
+  - scope:
+      path: ""
+      type: "aktivitaeten"
+    values:
+      layout: "aktivitaet"
+      wide: true
 
 # Gäste-Link: /kontakt/?gast=<token> (siehe README)
 guest_link_param: gast

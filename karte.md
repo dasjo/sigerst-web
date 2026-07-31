@@ -80,7 +80,7 @@ Alle Touren und Ausflugsziele aus der [Aktivitäten-Übersicht]({{ site.baseurl 
       "hoehenmeter": {{ a.hoehenmeter | jsonify }},
       "familienfreundlich": {{ a.familienfreundlich | jsonify }},
       "anreise": {{ a.anreise | jsonify }},
-      "seite": {{ a.seite | jsonify }},
+      "url": {{ a.url | jsonify }},
       "bild": {{ a.bild | jsonify }}
     }{% unless forloop.last %},{% endunless %}
     {% endfor %}
@@ -109,24 +109,16 @@ Alle Touren und Ausflugsziele aus der [Aktivitäten-Übersicht]({{ site.baseurl 
     });
   }
 
-  function popupHtml(a) {
+  function detailsHtml(a) {
     var monate = (a.saison_monate || []).map(function (m) { return MONATE[m - 1]; }).join(", ");
-    var detailLink = a.seite ? '<div style="margin-top:.4rem;"><a href="' + BASEURL + a.seite + '">Details auf der Wanderseite →</a></div>' : "";
-    var extra = [];
-    if (a.distanz_km) extra.push(a.distanz_km + " km");
-    if (a.hoehenmeter) extra.push(a.hoehenmeter + " Hm");
+    var detailLink = a.url ? '<a class="liste-detail-link" href="' + BASEURL + a.url + '">Details zur Tour →</a>' : "";
     var bildHtml = a.bild
-      ? '<img src="' + BASEURL + a.bild + '" alt="" class="popup-bild" loading="lazy">'
+      ? '<img src="' + BASEURL + a.bild + '" alt="" class="eintrag-bild" loading="lazy">'
       : "";
     return (
-      '<div class="popup-aktivitaet">' +
+      '<div class="eintrag-details">' +
       bildHtml +
-      "<strong>" + escapeHtml(a.title) + "</strong><br>" +
-      '<span class="badge">' + escapeHtml(a.schwierigkeit_wert) + "</span>" +
-      '<span class="badge">' + a.dauer_von + "–" + a.dauer_bis + " h</span>" +
-      (extra.length ? '<span class="badge">' + extra.join(" · ") + "</span>" : "") +
-      (a.familienfreundlich ? '<span class="badge">Familienfreundlich</span>' : "") +
-      '<div style="margin-top:.4rem; font-size:.85rem; color:#555;">' +
+      '<div class="eintrag-info">' +
       "Saison: " + monate + "<br>" +
       "Start: " + escapeHtml(a.start_name) +
       (a.anreise ? "<br>Anreise: " + escapeHtml(a.anreise) : "") +
@@ -195,13 +187,70 @@ Alle Touren und Ausflugsziele aus der [Aktivitäten-Übersicht]({{ site.baseurl 
     // und zeigt Start-/Endpunkt des Tracks als kleine Kreise.
     var aktivesEintrag = null;
     var aktiveMarker = [];
+    var aktiveOutline = null;
 
     function pfadElement(layer) {
       return layer.getElement ? layer.getElement() : layer._path;
     }
 
+    // Zoomt/verschiebt die Karte so, dass die ganze Tour (Track, sonst nur Startpunkt) sichtbar ist.
+    function zeigeGesamteTour(eintrag) {
+      if (eintrag.trkpts && eintrag.trkpts.length > 1) {
+        map.fitBounds(L.latLngBounds(eintrag.trkpts), { padding: [40, 40] });
+      } else if (eintrag.data.start_koordinaten) {
+        map.setView(eintrag.data.start_koordinaten, 14, { animate: true });
+      }
+    }
+
+    // Hover-Hervorhebung: Track wird dicker/deckender, bekommt eine weisse Aussenlinie
+    // (wie die aktive Tour) und wird an den Anfang der Zeichenreihenfolge verschoben
+    // (bringToFront), damit er über anderen liegt. Die aktive (angeklickte) Tour hat
+    // ihre eigene, dauerhafte Hervorhebung und wird dabei nicht angerührt.
+    var hoverOutline = null;
+    function hoverEin(eintrag) {
+      if (eintrag === aktivesEintrag || !eintrag.linie || !eintrag.trkpts) return;
+      if (hoverOutline) {
+        map.removeLayer(hoverOutline);
+        hoverOutline = null;
+      }
+      hoverOutline = L.polyline(eintrag.trkpts, {
+        color: "#fff",
+        weight: 10,
+        opacity: 0.85
+      }).addTo(map);
+      eintrag.linie.setStyle({ weight: 6, opacity: 1 });
+      eintrag.linie.bringToFront();
+    }
+    function hoverAus(eintrag) {
+      if (eintrag === aktivesEintrag || !eintrag.linie) return;
+      if (hoverOutline) {
+        map.removeLayer(hoverOutline);
+        hoverOutline = null;
+      }
+      eintrag.linie.setStyle({ weight: 4, opacity: 0.75 });
+    }
+
+    // Beim Hover eines Listeneintrags zusätzlich auf die ganze Tour zoomen.
+    // Leicht verzögert (debounced), damit schnelles Drüberfahren über mehrere
+    // Einträge die Karte nicht wild hin- und herspringen lässt.
+    var hoverZoomTimer = null;
+    function hoverEinListe(eintrag) {
+      hoverEin(eintrag);
+      clearTimeout(hoverZoomTimer);
+      hoverZoomTimer = setTimeout(function () { zeigeGesamteTour(eintrag); }, 180);
+    }
+    function hoverAusListe(eintrag) {
+      clearTimeout(hoverZoomTimer);
+      hoverAus(eintrag);
+    }
+
     function waehleAktivitaet(eintrag) {
       if (aktivesEintrag === eintrag) return;
+
+      if (hoverOutline) {
+        map.removeLayer(hoverOutline);
+        hoverOutline = null;
+      }
 
       if (aktivesEintrag) {
         aktivesEintrag.li.classList.remove("aktiv");
@@ -213,11 +262,26 @@ Alle Touren und Ausflugsziele aus der [Aktivitäten-Übersicht]({{ site.baseurl 
       }
       aktiveMarker.forEach(function (m) { map.removeLayer(m); });
       aktiveMarker = [];
+      if (aktiveOutline) {
+        map.removeLayer(aktiveOutline);
+        aktiveOutline = null;
+      }
 
       aktivesEintrag = eintrag;
       eintrag.li.classList.add("aktiv");
+      eintrag.li.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      zeigeGesamteTour(eintrag);
 
       if (eintrag.linie) {
+        // Weisse, leicht transparente Aussenlinie hinter dem Track, damit die aktive
+        // Tour auch dort erkennbar bleibt, wo mehrere Tracks übereinanderliegen.
+        if (eintrag.trkpts && eintrag.trkpts.length > 1) {
+          aktiveOutline = L.polyline(eintrag.trkpts, {
+            color: "#fff",
+            weight: 10,
+            opacity: 0.85
+          }).addTo(map);
+        }
         eintrag.linie.setStyle({ weight: 6, opacity: 1 });
         eintrag.linie.bringToFront();
         var el = pfadElement(eintrag.linie);
@@ -262,8 +326,10 @@ Alle Touren und Ausflugsziele aus der [Aktivitäten-Übersicht]({{ site.baseurl 
           weight: 2,
           fillColor: farbeKat,
           fillOpacity: 0.9
-        }).bindPopup(popupHtml(a));
+        });
         marker.on("click", function () { waehleAktivitaet(eintrag); });
+        marker.on("mouseover", function () { hoverEin(eintrag); });
+        marker.on("mouseout", function () { hoverAus(eintrag); });
         layerGroup.addLayer(marker);
         alleMarker.push(marker);
       }
@@ -281,16 +347,14 @@ Alle Touren und Ausflugsziele aus der [Aktivitäten-Übersicht]({{ site.baseurl 
       var li = document.createElement("li");
       li.innerHTML =
         '<span class="titel">' + escapeHtml(a.title) + "</span>" +
-        '<span class="meta">' + badges + "</span>";
-      li.addEventListener("click", function () {
-        if (a.start_koordinaten) {
-          map.setView(a.start_koordinaten, 14, { animate: true });
-        }
-        layerGroup.eachLayer(function (l) {
-          if (l.openPopup) l.openPopup();
-        });
+        '<span class="meta">' + badges + "</span>" +
+        detailsHtml(a);
+      li.addEventListener("click", function (ev) {
+        if (ev.target && ev.target.classList.contains("liste-detail-link")) return;
         waehleAktivitaet(eintrag);
       });
+      li.addEventListener("mouseenter", function () { hoverEinListe(eintrag); });
+      li.addEventListener("mouseleave", function () { hoverAusListe(eintrag); });
       listeEl.appendChild(li);
       eintrag.li = li;
       eintraege.push(eintrag);
@@ -302,11 +366,27 @@ Alle Touren und Ausflugsziele aus der [Aktivitäten-Übersicht]({{ site.baseurl 
               color: farbeKat,
               weight: 4,
               opacity: 0.75
-            }).bindPopup(popupHtml(a));
+            });
             linie.on("click", function () { waehleAktivitaet(eintrag); });
+            linie.on("mouseover", function () { hoverEin(eintrag); });
+            linie.on("mouseout", function () { hoverAus(eintrag); });
             layerGroup.addLayer(linie);
             eintrag.linie = linie;
             eintrag.trkpts = gpx.trkpts;
+            // Falls die Aktivität schon aktiviert wurde, bevor der Track geladen war:
+            // Karte nachträglich auf die ganze Tour zoomen.
+            if (aktivesEintrag === eintrag) {
+              aktiveOutline = L.polyline(eintrag.trkpts, {
+                color: "#fff",
+                weight: 10,
+                opacity: 0.85
+              }).addTo(map);
+              eintrag.linie.setStyle({ weight: 6, opacity: 1 });
+              eintrag.linie.bringToFront();
+              var elNachtraeglich = pfadElement(eintrag.linie);
+              if (elNachtraeglich) elNachtraeglich.classList.add("track-aktiv");
+              zeigeGesamteTour(eintrag);
+            }
           }
           gpx.wpts.forEach(function (w) {
             if (w.name && w.name.indexOf(a.start_name.split(",")[0].split("(")[0].trim()) === 0) return;

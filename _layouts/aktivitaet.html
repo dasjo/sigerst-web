@@ -1,0 +1,116 @@
+---
+layout: default
+---
+<article class="aktivitaet-detail">
+  <p class="breadcrumb"><a href="{{ site.baseurl }}/karte/">← Karte</a> · <a href="{{ site.baseurl }}/aktivitaeten/">Aktivitäten</a></p>
+
+  {% if page.bild %}
+  <img class="aktivitaet-hero" src="{{ site.baseurl }}{{ page.bild }}" alt="{{ page.title }}" loading="lazy">
+  {% endif %}
+
+  <h1>{{ page.title }}</h1>
+
+  <div class="aktivitaet-badges">
+    {% if page.kategorie %}<span class="badge badge-kategorie">{{ page.kategorie | capitalize }}</span>{% endif %}
+    {% if page.schwierigkeit.wert %}<span class="badge">{{ page.schwierigkeit.wert }}</span>{% endif %}
+    {% if page.dauer.von %}<span class="badge">{{ page.dauer.von }}–{{ page.dauer.bis }} h</span>{% endif %}
+    {% if page.distanz_km %}<span class="badge">{{ page.distanz_km }} km</span>{% endif %}
+    {% if page.hoehenmeter %}<span class="badge">{{ page.hoehenmeter }} Hm</span>{% endif %}
+    {% if page.familienfreundlich %}<span class="badge badge-familie">Familienfreundlich</span>{% endif %}
+  </div>
+
+  <div class="aktivitaet-content">
+    {% assign body = content %}
+    {% for other in site.aktivitaeten %}
+      {% assign token = "[[" | append: other.slug | append: "]]" %}
+      {% if body contains token %}
+        {% assign link = '<a href="' | append: site.baseurl | append: other.url | append: '">' | append: other.title | append: '</a>' %}
+        {% assign body = body | replace: token, link %}
+      {% endif %}
+    {% endfor %}
+    {{ body }}
+  </div>
+
+  <dl class="aktivitaet-fakten">
+    {% if page.start.name %}
+    <dt>Ausgangspunkt</dt>
+    <dd>{{ page.start.name }}</dd>
+    {% endif %}
+    {% if page.anreise %}
+    <dt>Anreise</dt>
+    <dd>{{ page.anreise }}</dd>
+    {% endif %}
+    {% if page.saison.monate %}
+    <dt>Saison</dt>
+    <dd>
+      {% assign monatsnamen = "Jan,Feb,Mär,Apr,Mai,Jun,Jul,Aug,Sep,Okt,Nov,Dez" | split: "," %}
+      {% for m in page.saison.monate %}{{ monatsnamen[m | minus: 1] }}{% unless forloop.last %}, {% endunless %}{% endfor %}
+      {% if page.saison.hinweis %} — {{ page.saison.hinweis }}{% endif %}
+    </dd>
+    {% endif %}
+    {% if page.gpx %}
+    <dt>GPX-Track</dt>
+    <dd>
+      <a href="{{ site.baseurl }}{{ page.gpx }}" download>Track herunterladen</a>
+      {% if page.gpx_quelle %}<br><span class="quelle">{{ page.gpx_quelle }}</span>{% endif %}
+    </dd>
+    {% endif %}
+  </dl>
+
+  {% if page.gpx and page.start.koordinaten %}
+  <div id="aktivitaet-map" class="aktivitaet-map"></div>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+  (function () {
+    var BASEURL = {{ site.baseurl | jsonify }};
+    var GPX = {{ page.gpx | jsonify }};
+    var START = {{ page.start.koordinaten | jsonify }};
+    var FARBEN = { wandern: "#2d5a27", klettern: "#b8562f", baden: "#1f6f8b", bike: "#7a4fa0", winter: "#3a6ea5", kulinarik: "#a3752c" };
+    var farbe = FARBEN[{{ page.kategorie | jsonify }}] || "#555";
+
+    function init() {
+      if (typeof L === "undefined") return;
+      var map = L.map("aktivitaet-map", { scrollWheelZoom: false });
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        maxZoom: 18,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>-Mitwirkende'
+      }).addTo(map);
+      map.setView(START, 13);
+
+      fetch(BASEURL + GPX).then(function (r) { return r.text(); }).then(function (text) {
+        var xml = new DOMParser().parseFromString(text, "application/xml");
+        var pts = Array.prototype.slice.call(xml.querySelectorAll("trkpt")).map(function (el) {
+          return [parseFloat(el.getAttribute("lat")), parseFloat(el.getAttribute("lon"))];
+        });
+        if (pts.length > 1) {
+          var linie = L.polyline(pts, { color: farbe, weight: 4, opacity: 0.85 }).addTo(map);
+          L.circleMarker(pts[0], { radius: 7, color: "#fff", weight: 2, fillColor: "#2e8b3c", fillOpacity: 1 }).bindTooltip("Start", { direction: "top", offset: [0, -6] }).addTo(map);
+          L.circleMarker(pts[pts.length - 1], { radius: 7, color: "#fff", weight: 2, fillColor: "#b8322f", fillOpacity: 1 }).bindTooltip("Ende", { direction: "top", offset: [0, -6] }).addTo(map);
+          map.fitBounds(linie.getBounds(), { padding: [30, 30] });
+        }
+      }).catch(function (e) { console.warn("GPX konnte nicht geladen werden:", e); });
+    }
+
+    if (typeof L === "undefined") {
+      window.addEventListener("load", function () { setTimeout(init, 300); });
+    } else {
+      init();
+    }
+  })();
+  </script>
+  {% endif %}
+
+  {% if page.links %}
+  <h2>Weitere Infos</h2>
+  <ul class="aktivitaet-links">
+    {% for l in page.links %}
+    <li><a href="{{ l.url }}" target="_blank" rel="noopener">{{ l.titel }}</a></li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+
+  {% if page.bild_quelle %}<p class="bild-quelle">Bild: {{ page.bild_quelle }}</p>{% endif %}
+
+  <p><a href="{{ site.baseurl }}/karte/">← Zurück zur Karte</a></p>
+</article>
