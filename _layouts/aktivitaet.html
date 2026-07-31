@@ -44,7 +44,7 @@ layout: default
     <dt>Saison</dt>
     <dd>
       {% assign monatsnamen = "Jan,Feb,Mär,Apr,Mai,Jun,Jul,Aug,Sep,Okt,Nov,Dez" | split: "," %}
-      {% for m in page.saison.monate %}{{ monatsnamen[m | minus: 1] }}{% unless forloop.last %}, {% endunless %}{% endfor %}
+      {% for m in page.saison.monate %}{% assign monat_index = m | minus: 1 %}{{ monatsnamen[monat_index] }}{% unless forloop.last %}, {% endunless %}{% endfor %}
       {% if page.saison.hinweis %} — {{ page.saison.hinweis }}{% endif %}
     </dd>
     {% endif %}
@@ -78,16 +78,44 @@ layout: default
       }).addTo(map);
       map.setView(START, 13);
 
+      // Jedes <trk>-Element wird als eigenes Segment gezeichnet (statt alle
+      // Punkte zu einer einzigen Linie zu verschmelzen) – sonst entstehen bei
+      // Aktivitäten mit mehreren, nicht direkt verbundenen Trails (z.B.
+      // Trailnetze) gerade "Verbindungslinien" quer durch die Karte, die im
+      // echten Track gar nicht existieren. Zubringer-/Verbindungswege
+      // (Name enthält "access"/"connector") werden dünner/gestrichelt
+      // dargestellt, analog zur Kartenseite.
       fetch(BASEURL + GPX).then(function (r) { return r.text(); }).then(function (text) {
         var xml = new DOMParser().parseFromString(text, "application/xml");
-        var pts = Array.prototype.slice.call(xml.querySelectorAll("trkpt")).map(function (el) {
-          return [parseFloat(el.getAttribute("lat")), parseFloat(el.getAttribute("lon"))];
+        var segmente = Array.prototype.slice.call(xml.querySelectorAll("trk"))
+          .map(function (trkEl) {
+            var nameEl = trkEl.querySelector("name");
+            var pts = Array.prototype.slice.call(trkEl.querySelectorAll("trkpt")).map(function (el) {
+              return [parseFloat(el.getAttribute("lat")), parseFloat(el.getAttribute("lon"))];
+            });
+            return { name: nameEl ? nameEl.textContent : "", pts: pts };
+          })
+          .filter(function (seg) { return seg.pts.length > 1; });
+
+        var allePts = [];
+        segmente.forEach(function (seg) {
+          var istAccess = /access|connector/i.test(seg.name || "");
+          L.polyline(seg.pts, {
+            color: farbe,
+            weight: istAccess ? 2 : 4,
+            opacity: istAccess ? 0.5 : 0.85,
+            dashArray: istAccess ? "2 6" : null
+          }).addTo(map);
+          allePts = allePts.concat(seg.pts);
         });
-        if (pts.length > 1) {
-          var linie = L.polyline(pts, { color: farbe, weight: 4, opacity: 0.85 }).addTo(map);
+
+        if (segmente.length === 1) {
+          var pts = segmente[0].pts;
           L.circleMarker(pts[0], { radius: 7, color: "#fff", weight: 2, fillColor: "#2e8b3c", fillOpacity: 1 }).bindTooltip("Start", { direction: "top", offset: [0, -6] }).addTo(map);
           L.circleMarker(pts[pts.length - 1], { radius: 7, color: "#fff", weight: 2, fillColor: "#b8322f", fillOpacity: 1 }).bindTooltip("Ende", { direction: "top", offset: [0, -6] }).addTo(map);
-          map.fitBounds(linie.getBounds(), { padding: [30, 30] });
+        }
+        if (allePts.length > 1) {
+          map.fitBounds(L.latLngBounds(allePts), { padding: [30, 30] });
         }
       }).catch(function (e) { console.warn("GPX konnte nicht geladen werden:", e); });
     }

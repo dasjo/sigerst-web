@@ -1,98 +1,122 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<gpx version="1.1" creator="komoot.com (Export via Ferienhaus-Sigerst-Tooling)" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
-  <metadata>
-    <name>Alte Landstrasse</name>
-  </metadata>
-  <trk>
-    <name>Alte Landstrasse</name>
-    <trkseg>
-      <trkpt lat="47.19997" lon="9.37002"></trkpt>
-      <trkpt lat="47.20015" lon="9.37000"></trkpt>
-      <trkpt lat="47.20050" lon="9.37002"></trkpt>
-      <trkpt lat="47.20110" lon="9.37074"></trkpt>
-      <trkpt lat="47.20091" lon="9.37135"></trkpt>
-      <trkpt lat="47.20181" lon="9.37234"></trkpt>
-      <trkpt lat="47.20193" lon="9.37234"></trkpt>
-      <trkpt lat="47.20155" lon="9.37327"></trkpt>
-      <trkpt lat="47.20134" lon="9.37567"></trkpt>
-      <trkpt lat="47.20142" lon="9.37623"></trkpt>
-      <trkpt lat="47.20123" lon="9.37716"></trkpt>
-      <trkpt lat="47.20131" lon="9.37843"></trkpt>
-      <trkpt lat="47.20126" lon="9.37862"></trkpt>
-      <trkpt lat="47.20161" lon="9.37896"></trkpt>
-      <trkpt lat="47.20163" lon="9.37969"></trkpt>
-      <trkpt lat="47.20138" lon="9.38049"></trkpt>
-      <trkpt lat="47.20132" lon="9.38169"></trkpt>
-      <trkpt lat="47.20181" lon="9.38210"></trkpt>
-      <trkpt lat="47.20209" lon="9.38203"></trkpt>
-      <trkpt lat="47.20260" lon="9.38198"></trkpt>
-      <trkpt lat="47.20273" lon="9.38218"></trkpt>
-      <trkpt lat="47.20263" lon="9.38247"></trkpt>
-      <trkpt lat="47.20285" lon="9.38277"></trkpt>
-      <trkpt lat="47.20335" lon="9.38250"></trkpt>
-      <trkpt lat="47.20354" lon="9.38264"></trkpt>
-      <trkpt lat="47.20352" lon="9.38312"></trkpt>
-      <trkpt lat="47.20352" lon="9.38388"></trkpt>
-      <trkpt lat="47.20371" lon="9.38411"></trkpt>
-      <trkpt lat="47.20399" lon="9.38492"></trkpt>
-      <trkpt lat="47.20412" lon="9.38514"></trkpt>
-      <trkpt lat="47.20404" lon="9.38538"></trkpt>
-      <trkpt lat="47.20374" lon="9.38548"></trkpt>
-      <trkpt lat="47.20343" lon="9.38584"></trkpt>
-      <trkpt lat="47.20332" lon="9.38634"></trkpt>
-      <trkpt lat="47.20311" lon="9.38686"></trkpt>
-      <trkpt lat="47.20284" lon="9.38769"></trkpt>
-      <trkpt lat="47.20288" lon="9.38813"></trkpt>
-      <trkpt lat="47.20309" lon="9.38849"></trkpt>
-      <trkpt lat="47.20367" lon="9.38845"></trkpt>
-      <trkpt lat="47.20413" lon="9.38783"></trkpt>
-      <trkpt lat="47.20432" lon="9.38731"></trkpt>
-      <trkpt lat="47.20458" lon="9.38688"></trkpt>
-      <trkpt lat="47.20484" lon="9.38671"></trkpt>
-      <trkpt lat="47.20513" lon="9.38678"></trkpt>
-      <trkpt lat="47.20561" lon="9.38616"></trkpt>
-      <trkpt lat="47.20601" lon="9.38607"></trkpt>
-      <trkpt lat="47.20611" lon="9.38624"></trkpt>
-      <trkpt lat="47.20633" lon="9.38736"></trkpt>
-      <trkpt lat="47.20653" lon="9.38742"></trkpt>
-      <trkpt lat="47.20665" lon="9.38703"></trkpt>
-      <trkpt lat="47.20689" lon="9.38679"></trkpt>
-      <trkpt lat="47.20697" lon="9.38658"></trkpt>
-      <trkpt lat="47.20664" lon="9.38552"></trkpt>
-      <trkpt lat="47.20623" lon="9.38316"></trkpt>
-      <trkpt lat="47.20610" lon="9.38122"></trkpt>
-      <trkpt lat="47.20537" lon="9.37970"></trkpt>
-      <trkpt lat="47.20527" lon="9.37901"></trkpt>
-      <trkpt lat="47.20523" lon="9.37807"></trkpt>
-      <trkpt lat="47.20541" lon="9.37758"></trkpt>
-      <trkpt lat="47.20580" lon="9.37737"></trkpt>
-      <trkpt lat="47.20585" lon="9.37708"></trkpt>
-      <trkpt lat="47.20572" lon="9.37541"></trkpt>
-      <trkpt lat="47.20570" lon="9.37524"></trkpt>
-      <trkpt lat="47.20548" lon="9.37505"></trkpt>
-      <trkpt lat="47.20505" lon="9.37486"></trkpt>
-      <trkpt lat="47.20484" lon="9.37566"></trkpt>
-      <trkpt lat="47.20440" lon="9.37662"></trkpt>
-      <trkpt lat="47.20411" lon="9.37666"></trkpt>
-      <trkpt lat="47.20392" lon="9.37626"></trkpt>
-      <trkpt lat="47.20391" lon="9.37436"></trkpt>
-      <trkpt lat="47.20363" lon="9.37374"></trkpt>
-      <trkpt lat="47.20353" lon="9.37343"></trkpt>
-      <trkpt lat="47.20345" lon="9.37236"></trkpt>
-      <trkpt lat="47.20334" lon="9.37178"></trkpt>
-      <trkpt lat="47.20334" lon="9.37108"></trkpt>
-      <trkpt lat="47.20312" lon="9.37078"></trkpt>
-      <trkpt lat="47.20312" lon="9.37155"></trkpt>
-      <trkpt lat="47.20298" lon="9.37189"></trkpt>
-      <trkpt lat="47.20256" lon="9.37189"></trkpt>
-      <trkpt lat="47.20215" lon="9.37193"></trkpt>
-      <trkpt lat="47.20186" lon="9.37226"></trkpt>
-      <trkpt lat="47.20092" lon="9.37188"></trkpt>
-      <trkpt lat="47.20102" lon="9.37100"></trkpt>
-      <trkpt lat="47.20101" lon="9.37060"></trkpt>
-      <trkpt lat="47.20035" lon="9.36997"></trkpt>
-      <trkpt lat="47.20000" lon="9.36997"></trkpt>
-      <trkpt lat="47.19986" lon="9.37023"></trkpt>
-    </trkseg>
-  </trk>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<gpx version="1.1" creator="Trailforks.com" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gpxtpx="http://www.garmin.com/xmlschemas/TrackPointExtension/v1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd http://www.garmin.com/xmlschemas/TrackPointExtension/v1 http://www.garmin.com/xmlschemas/TrackPointExtensionv1.xsd">
+<metadata>
+<name>Alte Landstrasse Trailforks Trail</name>
+<link href="https://www.trailforks.com/">
+<text>Trailforks</text>
+</link>
+</metadata>
+<trk>
+<name>
+Alte Landstrasse
+</name>
+<link href="https://www.trailforks.com/trails/alte-landstrasse/">
+</link>
+<trkseg>
+<trkpt lat="47.20472" lon="9.37909">
+<ele>1123</ele>
+<time>2026-07-31T06:34:24-07:00</time>
+</trkpt>
+<trkpt lat="47.20464" lon="9.37936">
+<ele>1123</ele>
+<time>2026-07-31T06:34:25-07:00</time>
+</trkpt>
+<trkpt lat="47.20446" lon="9.37974">
+<ele>1118</ele>
+<time>2026-07-31T06:34:26-07:00</time>
+</trkpt>
+<trkpt lat="47.20432" lon="9.38007">
+<ele>1118</ele>
+<time>2026-07-31T06:34:27-07:00</time>
+</trkpt>
+<trkpt lat="47.20407" lon="9.38073">
+<ele>1112</ele>
+<time>2026-07-31T06:34:28-07:00</time>
+</trkpt>
+<trkpt lat="47.204" lon="9.38128">
+<ele>1101</ele>
+<time>2026-07-31T06:34:29-07:00</time>
+</trkpt>
+<trkpt lat="47.20397" lon="9.38173">
+<ele>1101</ele>
+<time>2026-07-31T06:34:30-07:00</time>
+</trkpt>
+<trkpt lat="47.20386" lon="9.38219">
+<ele>1104</ele>
+<time>2026-07-31T06:34:31-07:00</time>
+</trkpt>
+<trkpt lat="47.20374" lon="9.38245">
+<ele>1097</ele>
+<time>2026-07-31T06:34:32-07:00</time>
+</trkpt>
+<trkpt lat="47.20356" lon="9.38289">
+<ele>1101</ele>
+<time>2026-07-31T06:34:33-07:00</time>
+</trkpt>
+<trkpt lat="47.2035" lon="9.38324">
+<ele>1104</ele>
+<time>2026-07-31T06:34:34-07:00</time>
+</trkpt>
+<trkpt lat="47.20351" lon="9.38382">
+<ele>1096</ele>
+<time>2026-07-31T06:34:35-07:00</time>
+</trkpt>
+<trkpt lat="47.20358" lon="9.38413">
+<ele>1093</ele>
+<time>2026-07-31T06:34:36-07:00</time>
+</trkpt>
+<trkpt lat="47.20369" lon="9.38413">
+<ele>1093</ele>
+<time>2026-07-31T06:34:37-07:00</time>
+</trkpt>
+<trkpt lat="47.20378" lon="9.38447">
+<ele>1098</ele>
+<time>2026-07-31T06:34:38-07:00</time>
+</trkpt>
+<trkpt lat="47.20387" lon="9.38474">
+<ele>1096</ele>
+<time>2026-07-31T06:34:39-07:00</time>
+</trkpt>
+<trkpt lat="47.20396" lon="9.38488">
+<ele>1095</ele>
+<time>2026-07-31T06:34:40-07:00</time>
+</trkpt>
+<trkpt lat="47.20412" lon="9.38515">
+<ele>1101</ele>
+<time>2026-07-31T06:34:41-07:00</time>
+</trkpt>
+<trkpt lat="47.20408" lon="9.38542">
+<ele>1103</ele>
+<time>2026-07-31T06:34:42-07:00</time>
+</trkpt>
+<trkpt lat="47.20394" lon="9.38543">
+<ele>1100</ele>
+<time>2026-07-31T06:34:43-07:00</time>
+</trkpt>
+<trkpt lat="47.20364" lon="9.38557">
+<ele>1095</ele>
+<time>2026-07-31T06:34:44-07:00</time>
+</trkpt>
+<trkpt lat="47.20341" lon="9.38586">
+<ele>1091</ele>
+<time>2026-07-31T06:34:45-07:00</time>
+</trkpt>
+<trkpt lat="47.20335" lon="9.38618">
+<ele>1094</ele>
+<time>2026-07-31T06:34:46-07:00</time>
+</trkpt>
+<trkpt lat="47.20312" lon="9.38684">
+<ele>1095</ele>
+<time>2026-07-31T06:34:47-07:00</time>
+</trkpt>
+<trkpt lat="47.20311" lon="9.38685">
+<ele>1095</ele>
+<time>2026-07-31T06:34:48-07:00</time>
+</trkpt>
+<trkpt lat="47.20303" lon="9.38712">
+<ele>1098</ele>
+<time>2026-07-31T06:34:49-07:00</time>
+</trkpt>
+</trkseg>
+</trk>
 </gpx>

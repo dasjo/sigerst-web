@@ -2,32 +2,29 @@
 title: Alte Landstrasse
 kategorie: wandern
 dauer:
-  von: 1.5
-  bis: 2
+  von: 0.25
+  bis: 0.5
 schwierigkeit:
   skala: SAC-T
   wert: T1
   einfach: leicht
 saison:
   monate: [4, 5, 6, 7, 8, 9, 10, 11]
-  hinweis: "Leicht begehbare Wege, für alle Fitnesslevel geeignet"
+  hinweis: "Kurzer, leicht begehbarer Abschnitt, für alle Fitnesslevel geeignet"
 gpx: /assets/gpx/alte-landstrasse.gpx
-gpx_quelle: "Echter GPX-Export von Komoot-Tour 3141667021 (87 Punkte, downgesamplet)"
+gpx_quelle: "Echter GPX-Export von Trailforks (Alte Landstrasse Trail, 26 Punkte, mit Höhendaten)"
 start:
-  name: Wildhaus
-  koordinaten: [47.19997, 9.37002]  # aus Komoot-GPX-Export (Trackstart)
-distanz_km: 4.95
-hoehenmeter: 210
+  name: Wildhaus (bei der Talstation)
+  koordinaten: [47.20472, 9.37909]  # aus Trailforks-GPX-Export (Trackstart)
+distanz_km: 0.7
+hoehenmeter: 30
 familienfreundlich: true
 anreise: "Ab Ferienhaus: zu Fuß direkt erreichbar"
-seite: /wandern-ausflugsziele/#alte-landstrasse
 links:
-  - titel: Komoot-Tour (privat – Sichtbarkeit prüfen)
-    url: https://www.komoot.com/de-de/tour/3141667021
-  - titel: Trailforks (kurzer Teilabschnitt)
+  - titel: Alte Landstrasse (Trailforks)
     url: https://www.trailforks.com/trails/alte-landstrasse/
 bild: /assets/images/aktivitaeten/alte-landstrasse.jpg
-bild_quelle: "Foto aus Komoot-Tour 3141667021"
+bild_quelle: "Foto: Alte Landstrasse, Wildhaus"
 ---
 
-Gemütliche, leichte Wanderung auf der historischen Landstrasse: 4,95 km, 210 Hm Auf- und Abstieg, überwiegend Strasse und Wanderweg. Geeignet für alle Fitnesslevel.
+Kurzer, historischer Wegabschnitt der alten Landstrasse bei Wildhaus: 0,7 km, ca. 30 Hm. Leicht begehbar, gut für einen kurzen Spaziergang zwischendurch.

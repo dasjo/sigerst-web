@@ -176,81 +176,143 @@ a:hover { color: var(--color-link-hover); }
 /* Wide layout (map page) */
 .wrap--wide { max-width: 1100px; }
 
-/* Karte */
-.map-toolbar {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.25rem;
-  margin: 1rem 0 1.25rem;
-  padding: 1rem 1.25rem;
-  background: var(--color-card);
-  border: 1px solid #eee;
-  border-radius: 8px;
+/* Karte: Fullscreen App-Layout (Desktop), Komoot-Style. Auf Mobile (siehe
+   Media Query unten) fällt alles zurück auf ein gestapeltes Layout. */
+body.karte-fullscreen .site-footer { display: none; }
+body.karte-fullscreen main.page-content { padding: 0; }
+body.karte-fullscreen .wrap--wide { max-width: none; padding: 0; margin: 0; }
+
+.karte-app {
+  position: relative;
+  height: calc(100vh - var(--header-height, 89px));
+  overflow: hidden;
 }
-.map-toolbar fieldset { border: none; padding: 0; margin: 0; }
-.map-toolbar legend {
+.karte-mapwrap { position: absolute; inset: 0; }
+#aktivitaeten-map {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  border-radius: 0;
+  border: none;
+  background: #eef1ea;
+}
+
+/* Schwebende Liste oben links über der Karte */
+.karte-sidebar {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  bottom: 1rem;
+  width: 380px;
+  max-width: calc(100% - 2rem);
+  background: var(--color-card);
+  border-radius: 10px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.16);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.karte-sidebar-scroll {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  padding: 0;
+}
+.karte-sidebar-footer {
+  flex: 0 0 auto;
+  padding: 0.75rem 1.25rem 1rem;
+  border-top: 1px solid #eee;
+  font-size: 0.8rem;
+}
+.karte-sidebar-footer p { margin: 0 0 0.5rem; }
+.karte-sidebar-footer p:last-child { margin-bottom: 0; }
+.karte-sidebar-footer .map-hinweis { color: var(--color-muted); }
+
+/* Filter-Pills: schwebende Leiste oben, rechts neben der Liste */
+.filter-pills {
+  position: absolute;
+  top: 1rem;
+  left: calc(380px + 2rem);
+  right: 1rem;
+  z-index: 1000;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.pill { position: relative; }
+.pill-btn {
+  font: inherit;
+  font-size: 0.9rem;
+  padding: 0.55rem 0.95rem;
+  border-radius: 999px;
+  border: 1px solid #ddd;
+  background: var(--color-card);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--color-text);
+}
+.pill-btn:hover { background: #f3f6f1; }
+.pill.offen .pill-btn { border-color: var(--color-link); color: var(--color-link); }
+.pill-count {
+  font-size: 0.75rem;
+  color: var(--color-link);
+  font-weight: 600;
+}
+.pill-dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 0;
+  min-width: 230px;
+  max-width: min(320px, 90vw);
+  background: var(--color-card);
+  border-radius: 8px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18);
+  padding: 1rem 1.1rem;
+  z-index: 1001;
+}
+.pill.offen .pill-dropdown { display: block; }
+.pill-dropdown fieldset { border: none; padding: 0; margin: 0; }
+.pill-dropdown legend {
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.03em;
   color: var(--color-muted);
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.4rem;
   padding: 0;
 }
-.map-toolbar label {
-  display: inline-flex;
+.pill-dropdown label {
+  display: flex;
   align-items: center;
-  gap: 0.35rem;
-  margin-right: 0.85rem;
+  gap: 0.5rem;
+  padding: 0.3rem 0;
   font-size: 0.95rem;
   cursor: pointer;
+  white-space: nowrap;
 }
-.map-toolbar select {
+.pill-dropdown select {
+  width: 100%;
   font: inherit;
   font-size: 0.95rem;
-  padding: 0.3rem 0.5rem;
-  border-radius: 4px;
+  padding: 0.4rem 0.5rem;
+  border-radius: 6px;
   border: 1px solid #ccc;
   background: #fff;
 }
-.karte-layout {
-  display: flex;
-  gap: 1.5rem;
-  /* flex-wrap: wrap-reverse dreht die Kreuzachse um, daher bedeutet
-     align-items: flex-end hier "oben ausgerichtet" (siehe align-self unten) */
-  align-items: flex-end;
-  flex-wrap: wrap-reverse;
-}
-.karte-sidebar {
-  flex: 1 1 280px;
-  max-width: 340px;
-  align-self: flex-end;
-  height: 65vh;
-  min-height: 420px;
-  overflow-y: auto;
-  position: sticky;
-  top: 1rem;
-}
-.karte-mapwrap {
-  flex: 3 1 480px;
-  min-width: 280px;
-  align-self: flex-end;
-  position: sticky;
-  top: 1rem;
-}
-#aktivitaeten-map {
-  height: 65vh;
-  min-height: 420px;
-  border-radius: 8px;
-  border: 1px solid #eee;
-  background: #eef1ea;
-}
+
+/* Legende lebt im Footer der schwebenden Liste statt frei über der Karte zu
+   schweben – sonst liegt sie (unten links, wie die Liste selbst) genau unter
+   der Liste und wäre nie sichtbar. */
 .map-legend {
   display: flex;
   flex-wrap: wrap;
   gap: 0.35rem 0.9rem;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: var(--color-muted);
-  margin: 0.75rem 0 1rem;
+  margin-bottom: 0.6rem;
 }
 .map-legend .dot {
   display: inline-block;
@@ -260,25 +322,20 @@ a:hover { color: var(--color-link-hover); }
   margin-right: 0.3rem;
   vertical-align: middle;
 }
-.map-hinweis {
-  font-size: 0.85rem;
-  color: var(--color-muted);
-  margin-top: 0.75rem;
-}
 .aktivitaeten-liste {
   list-style: none;
   padding: 0;
-  padding-right: 0.4rem;
   margin: 0;
   display: grid;
-  gap: 0.5rem;
+  gap: 0;
   align-content: start;
 }
 .aktivitaeten-liste li {
   background: var(--color-card);
-  border: 1px solid #eee;
-  border-radius: 8px;
-  padding: 0.65rem 0.85rem;
+  border: 0;
+  border-bottom: 1px solid #eee;
+  border-radius: 0;
+  padding: 0.65rem 1.25rem;
   cursor: pointer;
   transition: background 0.15s, opacity 0.15s;
 }
@@ -335,38 +392,58 @@ a:hover { color: var(--color-link-hover); }
   to { stroke-dashoffset: -20; }
 }
 
-/* Karte: mobile Layout */
+/* Karte: mobile Layout – Fullscreen-Konzept passt hier nicht (kein Platz für
+   schwebende Elemente), daher zurück zum gestapelten Layout: Filter-Pills,
+   dann Karte, dann Liste, alles im normalen Seitenfluss. Muss zum
+   Desktop-Breakpoint in karte.md (matchMedia "min-width: 761px") passen. */
 @media (max-width: 760px) {
-  .karte-layout {
+  body.karte-fullscreen .site-footer { display: block; }
+  body.karte-fullscreen main.page-content { padding: calc(var(--spacing) * 2) 0; }
+  body.karte-fullscreen .wrap--wide { max-width: 1100px; padding: 0 var(--spacing); margin: 0 auto; }
+
+  .karte-app {
+    position: static;
+    height: auto;
+    overflow: visible;
+    display: flex;
     flex-direction: column;
-    flex-wrap: nowrap;
-    align-items: stretch;
     gap: 1rem;
   }
-  .karte-mapwrap {
+  .filter-pills {
+    position: static;
     order: 1;
-    position: static;
-    min-width: 0;
-    width: 100%;
+    left: auto;
+    right: auto;
+    top: auto;
   }
-  .karte-sidebar {
-    order: 2;
+  .karte-mapwrap {
     position: static;
-    max-width: none;
-    width: 100%;
-    height: auto;
-    max-height: 55vh;
-    min-height: 0;
+    order: 2;
   }
   #aktivitaeten-map {
+    position: static;
     height: 50vh;
     min-height: 300px;
+    border-radius: 8px;
+    border: 1px solid #eee;
   }
-  .map-toolbar {
-    gap: 0.75rem 1rem;
-    padding: 0.85rem 1rem;
+  .karte-sidebar {
+    position: static;
+    order: 3;
+    top: auto;
+    left: auto;
+    bottom: auto;
+    width: calc(100% + var(--spacing) * 2);
+    margin-left: calc(var(--spacing) * -1);
+    max-width: none;
+    box-shadow: none;
+    border: none;
+    border-top: 1px solid #eee;
+    border-radius: 0;
+    max-height: none;
   }
-  .map-toolbar label { margin-right: 0.6rem; }
+  .karte-sidebar-scroll { max-height: 55vh; overflow-y: auto; }
+  .pill-dropdown { left: 0; right: 0; max-width: none; }
 }
 
 /* Aktivitäten-Detailseite */

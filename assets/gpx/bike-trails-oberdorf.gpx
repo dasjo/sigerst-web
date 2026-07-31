@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="sigerst-import" xmlns="http://www.topografix.com/GPX/1/1">
+  <trk>
+    <name>Rigelboede Mountain Biking Trail -</name>
+    <trkseg>
+      <trkpt lat="47.19258" lon="9.35899"></trkpt>
+      <trkpt lat="47.19286" lon="9.35899"></trkpt>
+      <trkpt lat="47.19315" lon="9.35906"></trkpt>
+      <trkpt lat="47.19333" lon="9.35896"></trkpt>
+      <trkpt lat="47.19339" lon="9.35896"></trkpt>
+      <trkpt lat="47.19347" lon="9.35894"></trkpt>
+      <trkpt lat="47.19362" lon="9.35901"></trkpt>
+      <trkpt lat="47.19383" lon="9.35901"></trkpt>
+      <trkpt lat="47.19399" lon="9.35909"></trkpt>
+      <trkpt lat="47.19443" lon="9.35913"></trkpt>
+      <trkpt lat="47.19478" lon="9.35906"></trkpt>
+      <trkpt lat="47.19484" lon="9.35898"></trkpt>
+      <trkpt lat="47.19498" lon="9.35894"></trkpt>
+      <trkpt lat="47.19514" lon="9.35897"></trkpt>
+      <trkpt lat="47.19525" lon="9.35899"></trkpt>
+      <trkpt lat="47.19531" lon="9.35896"></trkpt>
+      <trkpt lat="47.19536" lon="9.35899"></trkpt>
+      <trkpt lat="47.19541" lon="9.35916"></trkpt>
+      <trkpt lat="47.19546" lon="9.35923"></trkpt>
+      <trkpt lat="47.19556" lon="9.35924"></trkpt>
+      <trkpt lat="47.19579" lon="9.35921"></trkpt>
+      <trkpt lat="47.19597" lon="9.35924"></trkpt>
+      <trkpt lat="47.19631" lon="9.35914"></trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <name>Grossrueti Hiking Trail -</name>
+    <trkseg>
+      <trkpt lat="47.19393" lon="9.36251"></trkpt>
+      <trkpt lat="47.19409" lon="9.36239"></trkpt>
+      <trkpt lat="47.19417" lon="9.36229"></trkpt>
+      <trkpt lat="47.19426" lon="9.36231"></trkpt>
+      <trkpt lat="47.19439" lon="9.36206"></trkpt>
+      <trkpt lat="47.19447" lon="9.36199"></trkpt>
+      <trkpt lat="47.19475" lon="9.36187"></trkpt>
+      <trkpt lat="47.19543" lon="9.36151"></trkpt>
+      <trkpt lat="47.19553" lon="9.36147"></trkpt>
+      <trkpt lat="47.19565" lon="9.36136"></trkpt>
+      <trkpt lat="47.1957" lon="9.36126"></trkpt>
+      <trkpt lat="47.19571" lon="9.36074"></trkpt>
+      <trkpt lat="47.19569" lon="9.36046"></trkpt>
+      <trkpt lat="47.19571" lon="9.36034"></trkpt>
+      <trkpt lat="47.19573" lon="9.36028"></trkpt>
+      <trkpt lat="47.19604" lon="9.35985"></trkpt>
+      <trkpt lat="47.19607" lon="9.35978"></trkpt>
+      <trkpt lat="47.19613" lon="9.35959"></trkpt>
+      <trkpt lat="47.19619" lon="9.35931"></trkpt>
+      <trkpt lat="47.19618" lon="9.35904"></trkpt>
+      <trkpt lat="47.1962" lon="9.35894"></trkpt>
+      <trkpt lat="47.19643" lon="9.35891"></trkpt>
+      <trkpt lat="47.19656" lon="9.35886"></trkpt>
+      <trkpt lat="47.19672" lon="9.35861"></trkpt>
+      <trkpt lat="47.19684" lon="9.35845"></trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <name>Grossrueti upper Hiking Trail -</name>
+    <trkseg>
+      <trkpt lat="47.19156" lon="9.34511"></trkpt>
+      <trkpt lat="47.19143" lon="9.34531"></trkpt>
+      <trkpt lat="47.19114" lon="9.34643"></trkpt>
+      <trkpt lat="47.19109" lon="9.34675"></trkpt>
+      <trkpt lat="47.19105" lon="9.34722"></trkpt>
+      <trkpt lat="47.19112" lon="9.34789"></trkpt>
+      <trkpt lat="47.19113" lon="9.34866"></trkpt>
+      <trkpt lat="47.19112" lon="9.34948"></trkpt>
+      <trkpt lat="47.19114" lon="9.34977"></trkpt>
+      <trkpt lat="47.19118" lon="9.34995"></trkpt>
+      <trkpt lat="47.19112" lon="9.35042"></trkpt>
+      <trkpt lat="47.19115" lon="9.35075"></trkpt>
+      <trkpt lat="47.19114" lon="9.351"></trkpt>
+      <trkpt lat="47.19112" lon="9.35116"></trkpt>
+      <trkpt lat="47.19107" lon="9.35131"></trkpt>
+      <trkpt lat="47.19112" lon="9.35146"></trkpt>
+      <trkpt lat="47.1912" lon="9.352"></trkpt>
+      <trkpt lat="47.19114" lon="9.35227"></trkpt>
+      <trkpt lat="47.19111" lon="9.35249"></trkpt>
+      <trkpt lat="47.1911" lon="9.35285"></trkpt>
+      <trkpt lat="47.19112" lon="9.35313"></trkpt>
+      <trkpt lat="47.19107" lon="9.35364"></trkpt>
+      <trkpt lat="47.19107" lon="9.35379"></trkpt>
+      <trkpt lat="47.19111" lon="9.35412"></trkpt>
+      <trkpt lat="47.19107" lon="9.35435"></trkpt>
+      <trkpt lat="47.191" lon="9.35454"></trkpt>
+      <trkpt lat="47.19098" lon="9.35471"></trkpt>
+      <trkpt lat="47.19089" lon="9.35504"></trkpt>
+      <trkpt lat="47.19088" lon="9.35589"></trkpt>
+      <trkpt lat="47.19091" lon="9.35665"></trkpt>
+      <trkpt lat="47.19101" lon="9.35684"></trkpt>
+      <trkpt lat="47.19116" lon="9.35697"></trkpt>
+      <trkpt lat="47.19136" lon="9.35741"></trkpt>
+      <trkpt lat="47.19145" lon="9.35774"></trkpt>
+      <trkpt lat="47.19145" lon="9.35815"></trkpt>
+      <trkpt lat="47.1914" lon="9.35854"></trkpt>
+      <trkpt lat="47.19143" lon="9.35865"></trkpt>
+      <trkpt lat="47.19145" lon="9.359"></trkpt>
+      <trkpt lat="47.19141" lon="9.35925"></trkpt>
+      <trkpt lat="47.1914" lon="9.3594"></trkpt>
+      <trkpt lat="47.19147" lon="9.35979"></trkpt>
+      <trkpt lat="47.19152" lon="9.35982"></trkpt>
+      <trkpt lat="47.19167" lon="9.35987"></trkpt>
+      <trkpt lat="47.19168" lon="9.35994"></trkpt>
+      <trkpt lat="47.19189" lon="9.36004"></trkpt>
+      <trkpt lat="47.19196" lon="9.36003"></trkpt>
+      <trkpt lat="47.19199" lon="9.35998"></trkpt>
+      <trkpt lat="47.19204" lon="9.36001"></trkpt>
+      <trkpt lat="47.19212" lon="9.36001"></trkpt>
+      <trkpt lat="47.19224" lon="9.36009"></trkpt>
+      <trkpt lat="47.19233" lon="9.36009"></trkpt>
+      <trkpt lat="47.1924" lon="9.36013"></trkpt>
+      <trkpt lat="47.1926" lon="9.36015"></trkpt>
+      <trkpt lat="47.1927" lon="9.3602"></trkpt>
+      <trkpt lat="47.19282" lon="9.36015"></trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <name>Schwickler Trail Hiking Trail -</name>
+    <trkseg>
+      <trkpt lat="47.19335" lon="9.33733"></trkpt>
+      <trkpt lat="47.19343" lon="9.33765"></trkpt>
+      <trkpt lat="47.19367" lon="9.33808"></trkpt>
+      <trkpt lat="47.19392" lon="9.33871"></trkpt>
+      <trkpt lat="47.19408" lon="9.33948"></trkpt>
+      <trkpt lat="47.19425" lon="9.33968"></trkpt>
+      <trkpt lat="47.19434" lon="9.3401"></trkpt>
+      <trkpt lat="47.19461" lon="9.34089"></trkpt>
+      <trkpt lat="47.19466" lon="9.3415"></trkpt>
+      <trkpt lat="47.19463" lon="9.3417"></trkpt>
+      <trkpt lat="47.1946" lon="9.34212"></trkpt>
+      <trkpt lat="47.1947" lon="9.34231"></trkpt>
+      <trkpt lat="47.19489" lon="9.34275"></trkpt>
+      <trkpt lat="47.19502" lon="9.34287"></trkpt>
+      <trkpt lat="47.19531" lon="9.34351"></trkpt>
+      <trkpt lat="47.19536" lon="9.34374"></trkpt>
+      <trkpt lat="47.19555" lon="9.34434"></trkpt>
+      <trkpt lat="47.1956" lon="9.3446"></trkpt>
+      <trkpt lat="47.1958" lon="9.34496"></trkpt>
+      <trkpt lat="47.19605" lon="9.34528"></trkpt>
+      <trkpt lat="47.19623" lon="9.34586"></trkpt>
+      <trkpt lat="47.1963" lon="9.34615"></trkpt>
+      <trkpt lat="47.19643" lon="9.34651"></trkpt>
+      <trkpt lat="47.19643" lon="9.34666"></trkpt>
+      <trkpt lat="47.19652" lon="9.34702"></trkpt>
+      <trkpt lat="47.19663" lon="9.34712"></trkpt>
+      <trkpt lat="47.19666" lon="9.34719"></trkpt>
+      <trkpt lat="47.1967" lon="9.34747"></trkpt>
+      <trkpt lat="47.19667" lon="9.34808"></trkpt>
+      <trkpt lat="47.19662" lon="9.34845"></trkpt>
+      <trkpt lat="47.19664" lon="9.34871"></trkpt>
+      <trkpt lat="47.19654" lon="9.34928"></trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <name>Pipaper Mountain Biking Trail -</name>
+    <trkseg>
+      <trkpt lat="47.19198" lon="9.34645"></trkpt>
+      <trkpt lat="47.19196" lon="9.34655"></trkpt>
+      <trkpt lat="47.192" lon="9.3467"></trkpt>
+      <trkpt lat="47.19218" lon="9.34704"></trkpt>
+      <trkpt lat="47.1922" lon="9.34717"></trkpt>
+      <trkpt lat="47.19229" lon="9.34737"></trkpt>
+      <trkpt lat="47.19233" lon="9.34754"></trkpt>
+      <trkpt lat="47.19234" lon="9.34773"></trkpt>
+      <trkpt lat="47.19238" lon="9.34787"></trkpt>
+      <trkpt lat="47.19262" lon="9.34805"></trkpt>
+      <trkpt lat="47.19267" lon="9.34816"></trkpt>
+      <trkpt lat="47.19273" lon="9.34836"></trkpt>
+      <trkpt lat="47.19283" lon="9.34842"></trkpt>
+      <trkpt lat="47.19289" lon="9.34834"></trkpt>
+      <trkpt lat="47.19291" lon="9.34843"></trkpt>
+      <trkpt lat="47.193" lon="9.34849"></trkpt>
+      <trkpt lat="47.1931" lon="9.34867"></trkpt>
+      <trkpt lat="47.19315" lon="9.34871"></trkpt>
+      <trkpt lat="47.19335" lon="9.34901"></trkpt>
+      <trkpt lat="47.19344" lon="9.34909"></trkpt>
+      <trkpt lat="47.19356" lon="9.34925"></trkpt>
+      <trkpt lat="47.19373" lon="9.34938"></trkpt>
+      <trkpt lat="47.19374" lon="9.34946"></trkpt>
+      <trkpt lat="47.19367" lon="9.3495"></trkpt>
+      <trkpt lat="47.1936" lon="9.34957"></trkpt>
+      <trkpt lat="47.1936" lon="9.34969"></trkpt>
+      <trkpt lat="47.19362" lon="9.3498"></trkpt>
+      <trkpt lat="47.19366" lon="9.34988"></trkpt>
+      <trkpt lat="47.19366" lon="9.35008"></trkpt>
+      <trkpt lat="47.19371" lon="9.35019"></trkpt>
+      <trkpt lat="47.19378" lon="9.35022"></trkpt>
+      <trkpt lat="47.19389" lon="9.35031"></trkpt>
+      <trkpt lat="47.19393" lon="9.35038"></trkpt>
+      <trkpt lat="47.19398" lon="9.35042"></trkpt>
+      <trkpt lat="47.19404" lon="9.35051"></trkpt>
+      <trkpt lat="47.19425" lon="9.35075"></trkpt>
+      <trkpt lat="47.1942" lon="9.35084"></trkpt>
+      <trkpt lat="47.19421" lon="9.35092"></trkpt>
+      <trkpt lat="47.19422" lon="9.35097"></trkpt>
+      <trkpt lat="47.19431" lon="9.35113"></trkpt>
+      <trkpt lat="47.19436" lon="9.35131"></trkpt>
+      <trkpt lat="47.19434" lon="9.35149"></trkpt>
+      <trkpt lat="47.19441" lon="9.3516"></trkpt>
+      <trkpt lat="47.19446" lon="9.35163"></trkpt>
+      <trkpt lat="47.19465" lon="9.35166"></trkpt>
+      <trkpt lat="47.19479" lon="9.35164"></trkpt>
+      <trkpt lat="47.19485" lon="9.35159"></trkpt>
+      <trkpt lat="47.19488" lon="9.35159"></trkpt>
+      <trkpt lat="47.19493" lon="9.35168"></trkpt>
+      <trkpt lat="47.195" lon="9.35194"></trkpt>
+      <trkpt lat="47.19498" lon="9.35207"></trkpt>
+      <trkpt lat="47.195" lon="9.35224"></trkpt>
+      <trkpt lat="47.19506" lon="9.35218"></trkpt>
+      <trkpt lat="47.1951" lon="9.35209"></trkpt>
+      <trkpt lat="47.19517" lon="9.35204"></trkpt>
+      <trkpt lat="47.19523" lon="9.35202"></trkpt>
+      <trkpt lat="47.19533" lon="9.3521"></trkpt>
+      <trkpt lat="47.19542" lon="9.35221"></trkpt>
+      <trkpt lat="47.19555" lon="9.35225"></trkpt>
+      <trkpt lat="47.19568" lon="9.35237"></trkpt>
+      <trkpt lat="47.19568" lon="9.35244"></trkpt>
+      <trkpt lat="47.19571" lon="9.35244"></trkpt>
+      <trkpt lat="47.19572" lon="9.35242"></trkpt>
+      <trkpt lat="47.19577" lon="9.35249"></trkpt>
+      <trkpt lat="47.19581" lon="9.35249"></trkpt>
+      <trkpt lat="47.1959" lon="9.35241"></trkpt>
+      <trkpt lat="47.19592" lon="9.35235"></trkpt>
+      <trkpt lat="47.19592" lon="9.35233"></trkpt>
+      <trkpt lat="47.19586" lon="9.35222"></trkpt>
+      <trkpt lat="47.19589" lon="9.35211"></trkpt>
+      <trkpt lat="47.19595" lon="9.35211"></trkpt>
+      <trkpt lat="47.19599" lon="9.35214"></trkpt>
+      <trkpt lat="47.19613" lon="9.3521"></trkpt>
+      <trkpt lat="47.19625" lon="9.35211"></trkpt>
+      <trkpt lat="47.19632" lon="9.35209"></trkpt>
+      <trkpt lat="47.19648" lon="9.35199"></trkpt>
+      <trkpt lat="47.1966" lon="9.35188"></trkpt>
+      <trkpt lat="47.19677" lon="9.35185"></trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <name>AccessRigelboede Multi Trail -</name>
+    <trkseg>
+      <trkpt lat="47.19262" lon="9.36004"></trkpt>
+      <trkpt lat="47.1926" lon="9.35952"></trkpt>
+      <trkpt lat="47.1924" lon="9.35849"></trkpt>
+      <trkpt lat="47.19221" lon="9.35853"></trkpt>
+      <trkpt lat="47.19176" lon="9.3589"></trkpt>
+      <trkpt lat="47.19125" lon="9.35961"></trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <name>Access Grossrueti 2 Multi Trail -</name>
+    <trkseg>
+      <trkpt lat="47.19262" lon="9.36004"></trkpt>
+      <trkpt lat="47.1928" lon="9.36018"></trkpt>
+      <trkpt lat="47.19296" lon="9.36023"></trkpt>
+      <trkpt lat="47.19306" lon="9.36034"></trkpt>
+      <trkpt lat="47.19319" lon="9.36089"></trkpt>
+      <trkpt lat="47.19333" lon="9.36112"></trkpt>
+      <trkpt lat="47.19339" lon="9.36125"></trkpt>
+      <trkpt lat="47.19369" lon="9.36228"></trkpt>
+      <trkpt lat="47.19393" lon="9.36251"></trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <name>Access Road Multi Trail -</name>
+    <trkseg>
+      <trkpt lat="47.19684" lon="9.35845"></trkpt>
+      <trkpt lat="47.19705" lon="9.35824"></trkpt>
+      <trkpt lat="47.19741" lon="9.35821"></trkpt>
+      <trkpt lat="47.19752" lon="9.35812"></trkpt>
+      <trkpt lat="47.19773" lon="9.35784"></trkpt>
+      <trkpt lat="47.19795" lon="9.3575"></trkpt>
+      <trkpt lat="47.19801" lon="9.35726"></trkpt>
+      <trkpt lat="47.19806" lon="9.35718"></trkpt>
+      <trkpt lat="47.19833" lon="9.35713"></trkpt>
+      <trkpt lat="47.1984" lon="9.35706"></trkpt>
+      <trkpt lat="47.19852" lon="9.3567"></trkpt>
+      <trkpt lat="47.19864" lon="9.35627"></trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <name>Access Road Multi Trail -</name>
+    <trkseg>
+      <trkpt lat="47.19864" lon="9.35627"></trkpt>
+      <trkpt lat="47.19678" lon="9.35485"></trkpt>
+      <trkpt lat="47.19675" lon="9.35474"></trkpt>
+      <trkpt lat="47.19673" lon="9.35452"></trkpt>
+      <trkpt lat="47.19673" lon="9.35305"></trkpt>
+      <trkpt lat="47.19678" lon="9.35176"></trkpt>
+      <trkpt lat="47.19683" lon="9.35168"></trkpt>
+      <trkpt lat="47.19694" lon="9.35162"></trkpt>
+      <trkpt lat="47.19728" lon="9.35093"></trkpt>
+      <trkpt lat="47.19737" lon="9.35086"></trkpt>
+      <trkpt lat="47.19758" lon="9.35082"></trkpt>
+      <trkpt lat="47.19978" lon="9.35054"></trkpt>
+    </trkseg>
+  </trk>
+  <trk>
+    <name>Connector Hiking Trail -</name>
+    <trkseg>
+      <trkpt lat="47.19654" lon="9.34928"></trkpt>
+      <trkpt lat="47.19653" lon="9.34967"></trkpt>
+      <trkpt lat="47.19656" lon="9.35"></trkpt>
+      <trkpt lat="47.19648" lon="9.35066"></trkpt>
+      <trkpt lat="47.19649" lon="9.3511"></trkpt>
+      <trkpt lat="47.197" lon="9.35149"></trkpt>
+    </trkseg>
+  </trk>
+</gpx>
