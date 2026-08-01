@@ -13,7 +13,6 @@ body_class: karte-fullscreen
     </div>
     <div class="karte-sidebar-footer">
       <div class="map-legend" id="map-legend"></div>
-      <p><a href="{{ site.baseurl }}/aktivitaeten/">← Zurück zur Aktivitäten-Übersicht</a></p>
     </div>
   </aside>
 

@@ -60,6 +60,43 @@ body {
 }
 .site-nav a:hover { color: var(--color-link); }
 
+/* Hamburger-Menü: nur < 761px sichtbar, Checkbox-Toggle ohne JS */
+.nav-toggle { display: none; }
+.nav-toggle-btn { display: none; }
+@media (max-width: 760px) {
+  .site-header .wrap { position: relative; }
+  .nav-toggle-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    margin-left: auto;
+    cursor: pointer;
+    order: 2;
+  }
+  .nav-toggle-btn span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: var(--color-text);
+    border-radius: 2px;
+  }
+  .site-nav {
+    display: none;
+    order: 3;
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+    margin-top: 0.5rem;
+    border-top: 1px solid #eee;
+  }
+  .site-nav a { padding: 0.75rem 0; border-bottom: 1px solid #f0f0f0; }
+  .nav-toggle:checked ~ .site-nav { display: flex; }
+}
+
 /* Main */
 .page-content {
   padding: calc(var(--spacing) * 2) 0;
@@ -322,7 +359,7 @@ body.karte-fullscreen .wrap--wide { max-width: none; padding: 0; margin: 0; }
   margin-right: 0.3rem;
   vertical-align: middle;
 }
-.aktivitaeten-liste {
+.karte-sidebar .aktivitaeten-liste {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -392,57 +429,43 @@ body.karte-fullscreen .wrap--wide { max-width: none; padding: 0; margin: 0; }
   to { stroke-dashoffset: -20; }
 }
 
-/* Karte: mobile Layout – Fullscreen-Konzept passt hier nicht (kein Platz für
-   schwebende Elemente), daher zurück zum gestapelten Layout: Filter-Pills,
-   dann Karte, dann Liste, alles im normalen Seitenfluss. Muss zum
+/* Karte: mobile Layout – jetzt ebenfalls echtes Fullscreen wie Desktop
+   (kein Footer, kein Seiten-Padding), aber gestapelt statt schwebend: Karte
+   oben (50%), Liste unten (50%), Filter-Pills als schwebende Leiste über der
+   Karte. Nur die Liste scrollt, die Seite selbst nicht. Muss zum
    Desktop-Breakpoint in karte.md (matchMedia "min-width: 761px") passen. */
 @media (max-width: 760px) {
-  body.karte-fullscreen .site-footer { display: block; }
-  body.karte-fullscreen main.page-content { padding: calc(var(--spacing) * 2) 0; }
-  body.karte-fullscreen .wrap--wide { max-width: 1100px; padding: 0 var(--spacing); margin: 0 auto; }
-
   .karte-app {
-    position: static;
-    height: auto;
-    overflow: visible;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
   }
   .filter-pills {
-    position: static;
-    order: 1;
-    left: auto;
-    right: auto;
-    top: auto;
+    top: 0.75rem;
+    left: 0.75rem;
+    right: 0.75rem;
   }
   .karte-mapwrap {
-    position: static;
-    order: 2;
-  }
-  #aktivitaeten-map {
-    position: static;
-    height: 50vh;
-    min-height: 300px;
-    border-radius: 8px;
-    border: 1px solid #eee;
+    position: relative;
+    inset: auto;
+    order: 1;
+    flex: 1 1 50%;
+    min-height: 0;
   }
   .karte-sidebar {
-    position: static;
-    order: 3;
+    position: relative;
+    order: 2;
+    flex: 1 1 50%;
+    min-height: 0;
     top: auto;
     left: auto;
     bottom: auto;
-    width: calc(100% + var(--spacing) * 2);
-    margin-left: calc(var(--spacing) * -1);
+    width: 100%;
     max-width: none;
     box-shadow: none;
     border: none;
     border-top: 1px solid #eee;
     border-radius: 0;
-    max-height: none;
   }
-  .karte-sidebar-scroll { max-height: 55vh; overflow-y: auto; }
   .pill-dropdown { left: 0; right: 0; max-width: none; }
 }
 
