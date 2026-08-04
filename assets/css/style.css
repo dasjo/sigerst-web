@@ -536,3 +536,110 @@ body.karte-fullscreen .wrap--wide { max-width: none; padding: 0; margin: 0; }
 }
 .aktivitaeten-list a:hover { text-decoration: underline; }
 .aktivitaeten-list p { margin: 0.35rem 0 0; font-size: 0.95rem; color: var(--color-muted); }
+
+/* Chat- & Feedback-Widget: schwebt auf jeder Seite unten rechts. Auf
+   /karte/ etwas höher, damit es nicht mit dem Leaflet-Zoom-Regler
+   (ebenfalls unten rechts) kollidiert. */
+.chat-widget { position: fixed; right: 1rem; bottom: 1rem; z-index: 2000; }
+body.karte-fullscreen .chat-widget { bottom: 4.5rem; }
+/* [hidden] muss explizit gegen die eigenen display:flex-Regeln unten
+   gewinnen, sonst überschreiben diese das hidden-Attribut. */
+.chat-widget-panel[hidden],
+.chat-widget-body[hidden] { display: none; }
+.chat-widget-toggle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: none;
+  background: var(--color-link);
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+.chat-widget-toggle:hover { background: var(--color-link-hover); }
+.chat-widget-panel {
+  position: absolute;
+  bottom: calc(52px + 0.75rem);
+  right: 0;
+  width: 320px;
+  max-width: calc(100vw - 2rem);
+  max-height: 70vh;
+  background: var(--color-card);
+  border-radius: 10px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.chat-widget-tabs { display: flex; align-items: center; border-bottom: 1px solid #eee; }
+.chat-widget-tab {
+  flex: 1 1 auto;
+  font: inherit;
+  font-size: 0.9rem;
+  padding: 0.65rem 0.5rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--color-muted);
+  border-bottom: 2px solid transparent;
+}
+.chat-widget-tab.is-aktiv { color: var(--color-link); border-bottom-color: var(--color-link); font-weight: 600; }
+.chat-widget-close {
+  border: none;
+  background: none;
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--color-muted);
+  padding: 0.5rem 0.75rem;
+}
+.chat-widget-close:hover { color: var(--color-text); }
+.chat-widget-body { display: flex; flex-direction: column; flex: 1 1 auto; min-height: 0; padding: 0.75rem; gap: 0.6rem; }
+.chat-widget-messages { flex: 1 1 auto; overflow-y: auto; min-height: 120px; max-height: 40vh; display: flex; flex-direction: column; gap: 0.5rem; }
+.chat-widget-hinweis { font-size: 0.85rem; color: var(--color-muted); margin: 0; }
+.chat-widget-msg { margin: 0; padding: 0.5rem 0.7rem; border-radius: 8px; font-size: 0.9rem; max-width: 90%; }
+.chat-widget-msg--nutzer { background: #eef1ea; align-self: flex-end; }
+.chat-widget-msg--antwort { background: #f3f6f1; align-self: flex-start; }
+.chat-widget-msg--fehler { background: #fbeaea; color: #7a2020; align-self: flex-start; }
+.chat-widget-msg--laden { color: var(--color-muted); align-self: flex-start; }
+.chat-widget-form { display: flex; gap: 0.4rem; }
+.chat-widget-form input {
+  flex: 1 1 auto;
+  font: inherit;
+  font-size: 0.9rem;
+  padding: 0.5rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+.chat-widget-form button,
+.chat-widget-feedback-form button {
+  font: inherit;
+  font-size: 0.9rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
+  border: none;
+  background: var(--color-link);
+  color: #fff;
+  cursor: pointer;
+}
+.chat-widget-form button:hover,
+.chat-widget-feedback-form button:hover { background: var(--color-link-hover); }
+.chat-widget-feedback-form { display: flex; flex-direction: column; gap: 0.4rem; }
+.chat-widget-feedback-form label { font-size: 0.8rem; color: var(--color-muted); }
+.chat-widget-feedback-form textarea,
+.chat-widget-feedback-form input {
+  font: inherit;
+  font-size: 0.9rem;
+  padding: 0.5rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  resize: vertical;
+}
+.chat-widget-danke { font-size: 0.9rem; color: var(--color-link); margin: 0; }
+
+@media (max-width: 480px) {
+  .chat-widget-panel { width: calc(100vw - 2rem); }
+}

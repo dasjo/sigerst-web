@@ -1,0 +1,187 @@
+<!-- Schwebendes Chat- + Feedback-Widget, auf jeder Seite eingebunden (siehe
+     _layouts/default.html). Zwei Tabs: "Frage stellen" (LLM-Chat über den
+     Cloudflare Worker, siehe /cloudflare-worker) und "Feedback" (POST direkt
+     an ein Google Form, kein Backend nötig). -->
+<div class="chat-widget" id="chat-widget">
+  <button type="button" class="chat-widget-toggle" id="chat-widget-toggle" aria-expanded="false" aria-label="Fragen &amp; Feedback">
+    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+    </svg>
+  </button>
+
+  <div class="chat-widget-panel" id="chat-widget-panel" hidden>
+    <div class="chat-widget-tabs">
+      <button type="button" class="chat-widget-tab is-aktiv" data-tab="frage">Frage stellen</button>
+      <button type="button" class="chat-widget-tab" data-tab="feedback">Feedback</button>
+      <button type="button" class="chat-widget-close" id="chat-widget-close" aria-label="Schliessen">&times;</button>
+    </div>
+
+    <div class="chat-widget-body" data-panel="frage">
+      <div class="chat-widget-messages" id="chat-widget-messages">
+        <p class="chat-widget-hinweis">Frag mich etwas zum Ferienhaus, zur Anreise oder zu den Aktivitäten rund um Wildhaus. Bitte keine persönlichen Daten eingeben.</p>
+      </div>
+      <form class="chat-widget-form" id="chat-widget-form">
+        <input type="text" id="chat-widget-input" placeholder="Deine Frage …" maxlength="500" autocomplete="off">
+        <button type="submit">Senden</button>
+      </form>
+    </div>
+
+    <div class="chat-widget-body" data-panel="feedback" hidden>
+      <form class="chat-widget-feedback-form" id="chat-widget-feedback-form">
+        <label for="chat-widget-feedback-nachricht">Feedback</label>
+        <textarea id="chat-widget-feedback-nachricht" required maxlength="1000" placeholder="Was können wir verbessern?"></textarea>
+        <label for="chat-widget-feedback-name">Name (optional)</label>
+        <input type="text" id="chat-widget-feedback-name" maxlength="100">
+        <label for="chat-widget-feedback-email">E-Mail (optional)</label>
+        <input type="email" id="chat-widget-feedback-email" maxlength="150">
+        <button type="submit">Feedback senden</button>
+      </form>
+      <p class="chat-widget-danke" id="chat-widget-feedback-danke" hidden>Danke für dein Feedback!</p>
+    </div>
+  </div>
+</div>
+
+{% raw %}
+<script>
+(function () {
+  var CHAT_ENDPOINT = "https://sigerst-chat.sigerst.workers.dev";
+
+  var GOOGLE_FORM_ID = "1FAIpQLSelkv7e_rrFkFMnfrCn0n3-PVcvEfstSZNIJKDwRMkZ2eI0uQ";
+  var GOOGLE_FORM_ENTRY_IDS = {
+    nachricht: "1714654366",
+    name: "843109592",
+    email: "263873514",
+    url: "1666982273"
+  };
+
+  var widget = document.getElementById("chat-widget");
+  if (!widget) return;
+
+  var toggle = document.getElementById("chat-widget-toggle");
+  var panel = document.getElementById("chat-widget-panel");
+  var closeBtn = document.getElementById("chat-widget-close");
+  var tabs = Array.prototype.slice.call(widget.querySelectorAll(".chat-widget-tab"));
+  var bodies = Array.prototype.slice.call(widget.querySelectorAll(".chat-widget-body"));
+
+  function oeffnePanel() {
+    panel.hidden = false;
+    toggle.setAttribute("aria-expanded", "true");
+    var input = panel.querySelector('[data-panel="frage"] input, [data-panel="frage"]:not([hidden]) input');
+    if (input) input.focus();
+  }
+  function schliessePanel() {
+    panel.hidden = true;
+    toggle.setAttribute("aria-expanded", "false");
+  }
+  toggle.addEventListener("click", function () {
+    if (panel.hidden) { oeffnePanel(); } else { schliessePanel(); }
+  });
+  closeBtn.addEventListener("click", schliessePanel);
+  document.addEventListener("keydown", function (ev) {
+    if (ev.key === "Escape" && !panel.hidden) schliessePanel();
+  });
+  document.addEventListener("click", function (ev) {
+    if (!panel.hidden && !widget.contains(ev.target)) schliessePanel();
+  });
+
+  tabs.forEach(function (tab) {
+    tab.addEventListener("click", function () {
+      tabs.forEach(function (t) { t.classList.toggle("is-aktiv", t === tab); });
+      bodies.forEach(function (b) { b.hidden = b.getAttribute("data-panel") !== tab.getAttribute("data-tab"); });
+    });
+  });
+
+  // --- Tab "Frage stellen" ---
+  var messages = document.getElementById("chat-widget-messages");
+  var form = document.getElementById("chat-widget-form");
+  var input = document.getElementById("chat-widget-input");
+  var wartetAufAntwort = false;
+
+  function fuegeNachrichtHinzu(text, rolle) {
+    var el = document.createElement("p");
+    el.className = "chat-widget-msg chat-widget-msg--" + rolle;
+    el.textContent = text;
+    messages.appendChild(el);
+    messages.scrollTop = messages.scrollHeight;
+  }
+
+  form.addEventListener("submit", function (ev) {
+    ev.preventDefault();
+    var frage = input.value.trim();
+    if (!frage || wartetAufAntwort) return;
+
+    if (!CHAT_ENDPOINT) {
+      fuegeNachrichtHinzu(frage, "nutzer");
+      fuegeNachrichtHinzu("Der Chat ist noch nicht konfiguriert (Worker-URL fehlt).", "fehler");
+      input.value = "";
+      return;
+    }
+
+    fuegeNachrichtHinzu(frage, "nutzer");
+    input.value = "";
+    wartetAufAntwort = true;
+    var ladenEl = document.createElement("p");
+    ladenEl.className = "chat-widget-msg chat-widget-msg--laden";
+    ladenEl.textContent = "…";
+    messages.appendChild(ladenEl);
+    messages.scrollTop = messages.scrollHeight;
+
+    fetch(CHAT_ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ question: frage })
+    })
+      .then(function (res) { return res.json().then(function (data) { return { ok: res.ok, data: data }; }); })
+      .then(function (result) {
+        ladenEl.remove();
+        if (result.ok && result.data.answer) {
+          fuegeNachrichtHinzu(result.data.answer, "antwort");
+        } else {
+          fuegeNachrichtHinzu(result.data.error || "Da ist etwas schiefgelaufen.", "fehler");
+        }
+      })
+      .catch(function () {
+        ladenEl.remove();
+        fuegeNachrichtHinzu("Der Assistent ist gerade nicht erreichbar. Bitte später erneut versuchen.", "fehler");
+      })
+      .finally(function () {
+        wartetAufAntwort = false;
+      });
+  });
+
+  // --- Tab "Feedback" ---
+  var feedbackForm = document.getElementById("chat-widget-feedback-form");
+  var feedbackDanke = document.getElementById("chat-widget-feedback-danke");
+
+  feedbackForm.addEventListener("submit", function (ev) {
+    ev.preventDefault();
+    if (!GOOGLE_FORM_ID) {
+      feedbackDanke.textContent = "Feedback ist noch nicht konfiguriert (Google Form fehlt).";
+      feedbackDanke.hidden = false;
+      return;
+    }
+
+    var nachricht = document.getElementById("chat-widget-feedback-nachricht").value.trim();
+    var name = document.getElementById("chat-widget-feedback-name").value.trim();
+    var email = document.getElementById("chat-widget-feedback-email").value.trim();
+    if (!nachricht) return;
+
+    var daten = new FormData();
+    if (GOOGLE_FORM_ENTRY_IDS.nachricht) daten.append("entry." + GOOGLE_FORM_ENTRY_IDS.nachricht, nachricht);
+    if (GOOGLE_FORM_ENTRY_IDS.name) daten.append("entry." + GOOGLE_FORM_ENTRY_IDS.name, name);
+    if (GOOGLE_FORM_ENTRY_IDS.email) daten.append("entry." + GOOGLE_FORM_ENTRY_IDS.email, email);
+    if (GOOGLE_FORM_ENTRY_IDS.url) daten.append("entry." + GOOGLE_FORM_ENTRY_IDS.url, window.location.href);
+
+    fetch("https://docs.google.com/forms/d/e/" + GOOGLE_FORM_ID + "/formResponse", {
+      method: "POST",
+      mode: "no-cors",
+      body: daten
+    }).catch(function () { /* no-cors: Antwort kann nicht gelesen werden, ignorieren */ });
+
+    feedbackForm.hidden = true;
+    feedbackDanke.textContent = "Danke für dein Feedback!";
+    feedbackDanke.hidden = false;
+  });
+})();
+</script>
+{% endraw %}

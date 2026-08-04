@@ -1,0 +1,8 @@
+---
+permalink: /assets/data/chat-context.json
+---
+[
+{% for page in site.pages %}{% if page.title and page.layout == "default" and page.url != "/karte/" %}{"title": {{ page.title | jsonify }}, "url": {{ page.url | absolute_url | jsonify }}, "content": {{ page.content | strip_html | normalize_whitespace | jsonify }}},
+{% endif %}{% endfor %}{% for act in site.aktivitaeten %}{"title": {{ act.title | jsonify }}, "url": {{ act.url | absolute_url | jsonify }}, "kategorie": {{ act.kategorie | default: "" | jsonify }}, "content": {{ act.content | strip_html | normalize_whitespace | jsonify }}},
+{% endfor %}{"title": null}
+]
